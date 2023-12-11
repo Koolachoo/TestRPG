@@ -1,0 +1,170 @@
+[gd_scene load_steps=19 format=3 uid="uid://cfsrhtjrmsiup"]
+
+[ext_resource type="Script" path="res://Player.gd" id="4_gs6ds"]
+[ext_resource type="Texture2D" uid="uid://d0w5we1atr4sr" path="res://sprites/Hilbert/Down1.png" id="5_wqm7r"]
+[ext_resource type="Texture2D" uid="uid://bglv7mmggwecl" path="res://sprites/Hilbert/Down2.png" id="6_gvfb1"]
+[ext_resource type="Texture2D" uid="uid://d4iqoc1qgjxgy" path="res://sprites/Hilbert/Down3.png" id="7_h4o3y"]
+[ext_resource type="Texture2D" uid="uid://cf6ndtsnpbwto" path="res://sprites/Hilbert/Right1.png" id="7_jitvi"]
+[ext_resource type="Texture2D" uid="uid://blpwcupyvqiss" path="res://sprites/Hilbert/Left1.png" id="8_cb2m6"]
+[ext_resource type="Texture2D" uid="uid://by4oeib5n62oc" path="res://sprites/Hilbert/Left2.png" id="9_e6jxw"]
+[ext_resource type="Texture2D" uid="uid://dwxp0ge5sts1p" path="res://sprites/Hilbert/Left3.png" id="10_k6boa"]
+[ext_resource type="Texture2D" uid="uid://cea63sw2hb18" path="res://sprites/Hilbert/Up1.png" id="11_utn42"]
+[ext_resource type="Texture2D" uid="uid://ctf6hoh51ses8" path="res://sprites/Hilbert/Up2.png" id="12_vtujj"]
+[ext_resource type="Texture2D" uid="uid://csi8igml8bgbf" path="res://sprites/Hilbert/Up3.png" id="13_id2jg"]
+[ext_resource type="Texture2D" uid="uid://8bbka5n1xlv8" path="res://sprites/Hilbert/Right2.png" id="13_ujve5"]
+[ext_resource type="Texture2D" uid="uid://ckblkclwbfeib" path="res://sprites/Hilbert/Right3.png" id="14_m1bn0"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_88jic"]
+
+[sub_resource type="Sky" id="Sky_wf02b"]
+sky_material = SubResource("PhysicalSkyMaterial_88jic")
+
+[sub_resource type="Environment" id="Environment_i6ew0"]
+background_mode = 2
+sky = SubResource("Sky_wf02b")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r63in"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wqm7r")
+}],
+"loop": true,
+"name": &"StandDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_cb2m6")
+}],
+"loop": true,
+"name": &"StandLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jitvi")
+}],
+"loop": true,
+"name": &"StandRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_utn42")
+}],
+"loop": true,
+"name": &"StandUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wqm7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gvfb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wqm7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h4o3y")
+}],
+"loop": true,
+"name": &"WalkDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_cb2m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e6jxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cb2m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_k6boa")
+}],
+"loop": true,
+"name": &"WalkLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jitvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ujve5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jitvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_m1bn0")
+}],
+"loop": true,
+"name": &"WalkRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_utn42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vtujj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_utn42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_id2jg")
+}],
+"loop": true,
+"name": &"WalkUp",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vhisc"]
+radius = 0.379088
+height = 0.960763
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i6ew0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.926081, 0.377324, 0, -0.377324, 0.926081, 4.39113, 5.28315, 8.12022)
+shadow_enabled = true
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.496515, 0)
+script = ExtResource("4_gs6ds")
+speed = 3.0
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00119372, -0.832507, 0.00072822)
+alpha_cut = 2
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_r63in")
+animation = &"WalkLeft"
+frame = 1
+frame_progress = 0.0939484
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(0.28159, 0, 0, 0, 0.28159, 0, 0, 0, 0.28159, 0, -0.822193, 0)
+shape = SubResource("CapsuleShape3D_vhisc")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046361, -0.587661, 1.05746)
+
+[node name="Camera3D" type="Camera3D" parent="Player/SpringArm3D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.430091, -1.75854, 0.871822)
+use_collision = true
+size = Vector3(3.78137, 0.458008, 3.34656)
