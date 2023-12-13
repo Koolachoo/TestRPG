@@ -27,7 +27,7 @@ var currentVelocity: Vector2
 
 #@onready var view =$View
 @onready var _animated_sprite = $AnimatedSprite3D
-@onready var animation = $Player/AnimationPlayer
+@onready var animation = $AnimationPlayer
 
 #func _ready():
 	#Input.mouse_mode = 2
@@ -77,31 +77,26 @@ func _physics_process(delta):
 	
 	#if Input.is_action_just_pressed("jump") and is_on_floor():
 		#animation.play("Jump")
+	# Move left
+	if Input.is_action_pressed("move_left") and not input_dir.is_zero_approx():
+		_animated_sprite.play("WalkLeft")
+	elif Input.is_action_pressed("move_right")and not input_dir.is_zero_approx():
+		_animated_sprite.play("WalkRight")
+	elif Input.is_action_pressed("move_forward")and not input_dir.is_zero_approx():
+		_animated_sprite.play("WalkUp")
+	elif Input.is_action_pressed("move_backward")and not input_dir.is_zero_approx():
+		_animated_sprite.play("WalkDown")
+	elif input_dir.is_zero_approx():
+		_animated_sprite.stop()
+
+		
 
 	move_and_slide()
 
-func _process(_delta):
+#func _process(_delta):
 	# Move left
-	if Input.is_action_pressed("move_left"):
-		_animated_sprite.play("WalkLeft")
-	else:
-		_animated_sprite.stop()
+
 		
-	# Move Right
-	if Input.is_action_pressed("move_right"):
-		_animated_sprite.play("WalkRight")
-	else:
-		_animated_sprite.stop()
-	# Move Down
-	if Input.is_action_pressed("move_forward"):
-		_animated_sprite.play("WalkUp")
-	else:
-		_animated_sprite.stop()
-		
-	# Move Up
-	if Input.is_action_pressed("move_backward"):
-		_animated_sprite.play("WalkDown")
-	else:
-		_animated_sprite.stop()
+
 
 
