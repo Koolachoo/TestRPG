@@ -5,16 +5,8 @@ extends CharacterBody3D
 @export var jumpVelocity: float = 4.5
 @export var transitionSpeed: float =.01
 
-#@export var animationTree: AnimationTree
-#@export var locomotionBlendPath: String
 
-#@export_subgroup("Properties")
-#@export var movement_speed = 250
-#@export var jump_strength = 7
 
-#@onready var animation_tree = %sophia_skin
-#@onready var state_machine : AnimationNodeStateMachinePlayback = animation_tree.get("parameters/StateMachine/playback")
-#@onready var move_tilt_path : String = "parameters/StateMachine/Move/tilt/add_amount"
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
