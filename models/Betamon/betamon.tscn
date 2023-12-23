@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://0ntmceo67tjr"]
+
+[ext_resource type="PackedScene" uid="uid://c76pcw4g3w4j0" path="res://models/Betamon/Betamon.glb" id="1_2cgnp"]
+
+[node name="Betamon" instance=ExtResource("1_2cgnp")]

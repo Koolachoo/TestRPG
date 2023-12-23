@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bphf507vublwj"]
+
+[ext_resource type="Script" path="res://MainCharacter.gd" id="1_5y3fk"]
+[ext_resource type="PackedScene" uid="uid://wh0bqbrvxoed" path="res://models/Mikey/mikey.tscn" id="2_8ca7p"]
+[ext_resource type="PackedScene" uid="uid://wmf2eu0uuhrg" path="res://addons/third-person-camera/third_person_camera/ThirdPersonCamera.tscn" id="3_ed4ii"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yxl4f"]
+height = 1.67145
+
+[node name="MainCharacter" type="CharacterBody3D"]
+script = ExtResource("1_5y3fk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66924, 0)
+shape = SubResource("CapsuleShape3D_yxl4f")
+
+[node name="Camera" type="Node3D" parent="."]
+
+[node name="ThirdPersonCamera" parent="Camera" instance=ExtResource("3_ed4ii")]
+distance_from_pivot = 5.0
+initial_dive_angle_deg = -52.651
+tilt_upper_limit_deg = 59.82
+
+[node name="visuals" type="Node3D" parent="."]
+
+[node name="Mikey" parent="visuals" instance=ExtResource("2_8ca7p")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
