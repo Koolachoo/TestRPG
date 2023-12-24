@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://cy36aygvs66pn"]
+[gd_scene load_steps=55 format=3 uid="uid://cy36aygvs66pn"]
 
 [ext_resource type="PackedScene" uid="uid://kod0awm1ha4o" path="res://models/gobot/model/gobot.glb" id="1_qg1mb"]
 [ext_resource type="Script" path="res://models/gobot/gobot_skin.gd" id="1_rwke8"]
@@ -1994,7 +1994,7 @@ nodes/Animation/position = Vector2(120, 100)
 nodes/Step/node = SubResource("AnimationNodeAnimation_l1uic")
 nodes/Step/position = Vector2(100, 220)
 nodes/output/position = Vector2(560, 80)
-node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"Animation", &"Add2", 1, &"Step"]
+node_connections = [&"Add2", 0, &"Animation", &"Add2", 1, &"Step", &"output", 0, &"Add2"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f1d5g"]
 animation = &"VictorySign"
@@ -2091,9 +2091,7 @@ nodes/HurtShot/position = Vector2(420, 80)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_fdt88")
 nodes/StateMachine/position = Vector2(0, 80)
 nodes/output/position = Vector2(580, 80)
-node_connections = [&"output", 0, &"HurtShot", &"FlipShot", 0, &"StateMachine", &"FlipShot", 1, &"Flip", &"HurtShot", 0, &"FlipShot", &"HurtShot", 1, &"Animation"]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_chj4k"]
+node_connections = [&"FlipShot", 0, &"StateMachine", &"FlipShot", 1, &"Flip", &"HurtShot", 0, &"FlipShot", &"HurtShot", 1, &"Animation", &"output", 0, &"HurtShot"]
 
 [node name="GobotSkin" type="Node3D" node_paths=PackedStringArray("gobot_model")]
 script = ExtResource("1_rwke8")
@@ -2110,14 +2108,14 @@ bones/0/position = Vector3(0.125361, 0.0989139, 0.0728901)
 bones/0/rotation = Quaternion(0.772549, 0.107691, -0.136221, 0.610749)
 bones/1/position = Vector3(-0.109875, 0.0989111, -0.0510765)
 bones/1/rotation = Quaternion(0.679368, -0.310085, 0.392234, 0.537083)
-bones/2/position = Vector3(0, 0.357083, 0)
-bones/2/rotation = Quaternion(0.0697349, 0.0248084, -0.00173477, 0.997256)
-bones/3/rotation = Quaternion(1, -5.78106e-11, -7.50265e-08, 3.72784e-09)
-bones/4/rotation = Quaternion(-0.449087, -0.1393, -0.0411221, 0.881604)
-bones/5/rotation = Quaternion(0.302414, 1.0865e-06, -1.03345e-05, 0.953177)
-bones/6/rotation = Quaternion(-0.197068, 0.552523, 0.210998, 0.781897)
-bones/7/rotation = Quaternion(0.468384, -1.00863e-06, 1.6022e-05, 0.883525)
-bones/8/rotation = Quaternion(-0.630167, -0.279845, -0.675607, 0.261023)
+bones/2/position = Vector3(0, 0.369175, 0)
+bones/2/rotation = Quaternion(0.0697562, -0.00271489, 0.000189843, 0.99756)
+bones/3/rotation = Quaternion(1, 1.4457e-11, -7.56143e-08, 7.45069e-09)
+bones/4/rotation = Quaternion(-0.324843, -0.171385, -0.0302168, 0.929619)
+bones/5/rotation = Quaternion(0.111359, 1.12575e-06, -3.79968e-06, 0.99378)
+bones/6/rotation = Quaternion(-0.166123, 0.535417, 0.15773, 0.812928)
+bones/7/rotation = Quaternion(0.360814, -1.06399e-06, 1.23329e-05, 0.932638)
+bones/8/rotation = Quaternion(-0.600543, -0.290807, -0.70207, 0.248752)
 bones/9/rotation = Quaternion(2.16937e-07, 5.35541e-07, -0.395029, 0.918669)
 bones/10/rotation = Quaternion(-0.289732, -0.637458, -0.217438, 0.680017)
 bones/11/rotation = Quaternion(0.487906, -0.0174399, 0.00854542, 0.87268)
@@ -2125,7 +2123,7 @@ bones/12/rotation = Quaternion(-0.371224, -0.00197697, 0.00585366, 0.928523)
 bones/13/rotation = Quaternion(-0.502333, 1.50049e-05, -2.85054e-05, 0.864674)
 bones/14/rotation = Quaternion(-0.371224, -0.00197698, 0.00585369, 0.928523)
 bones/15/rotation = Quaternion(-0.502333, 1.49999e-05, -2.85068e-05, 0.864674)
-bones/16/rotation = Quaternion(-0.684697, 0.256928, 0.620278, 0.28361)
+bones/16/rotation = Quaternion(-0.710727, 0.244499, 0.590272, 0.294392)
 bones/17/rotation = Quaternion(2.27203e-07, -5.84749e-07, 0.395029, 0.918669)
 bones/18/rotation = Quaternion(-0.289732, 0.637458, 0.217438, 0.680017)
 bones/19/rotation = Quaternion(0.487906, 0.0174399, -0.00854541, 0.87268)
@@ -2161,14 +2159,19 @@ autostart = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 unique_name_in_owner = true
+root_node = NodePath("%AnimationTree/../gobot")
+libraries = {
+"": SubResource("AnimationLibrary_03he3"),
+"custom_lib": ExtResource("6_vjupt")
+}
 tree_root = SubResource("AnimationNodeBlendTree_8xvna")
 anim_player = NodePath("../gobot/AnimationPlayer")
-active = true
 parameters/FlipShot/active = false
+parameters/FlipShot/internal_active = false
 parameters/FlipShot/request = 0
 parameters/HurtShot/active = false
+parameters/HurtShot/internal_active = false
 parameters/HurtShot/request = 0
-parameters/StateMachine/playback = SubResource("AnimationNodeStateMachinePlayback_chj4k")
 parameters/StateMachine/Run/Add2/add_amount = 1.0
 
 [editable path="gobot"]

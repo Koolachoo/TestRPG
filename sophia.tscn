@@ -1,13 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqtlgqmf1ohdb"]
+[gd_scene load_steps=6 format=3 uid="uid://bqtlgqmf1ohdb"]
 
 [ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://models/sophia/sophia_skin.tscn" id="1_debe3"]
+[ext_resource type="Script" path="res://sophia.gd" id="1_k3i64"]
+[ext_resource type="PackedScene" uid="uid://bv87lqutlxhb6" path="res://systems/interaction/PlayerInteractor.tscn" id="3_uoidp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m6e2n"]
+size = Vector3(1, 2, 4)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_unske"]
 
 [node name="Sophia" type="CharacterBody3D"]
+script = ExtResource("1_k3i64")
 
 [node name="SophiaSkin" parent="." instance=ExtResource("1_debe3")]
+
+[node name="PlayerInteractor" parent="SophiaSkin" node_paths=PackedStringArray("player") instance=ExtResource("3_uoidp")]
+player = NodePath("../..")
+
+[node name="CollisionShape3D" parent="SophiaSkin/PlayerInteractor" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.5)
+shape = SubResource("BoxShape3D_m6e2n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.888811, 0)
 shape = SubResource("CapsuleShape3D_unske")
+
+[node name="Camera" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.735837, 0.677159, 0, -0.677159, 0.735837, -0.00013262, 5.24475, 4.51558)
+
+[node name="Camera3D" type="Camera3D" parent="Camera"]
+
+[editable path="SophiaSkin/PlayerInteractor"]
