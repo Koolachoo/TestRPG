@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @export var highlight_material: StandardMaterial3D
 
+@onready var robot_ani = $GobotSkin
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var robot_meshinstance: MeshInstance3D = $GobotSkin/gobot/Armature/Skeleton3D/Gobot
 @onready var robot_material: StandardMaterial3D = robot_meshinstance.mesh.surface_get_material(0)
@@ -12,12 +13,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var is_open: bool = false
 
 func open() -> void:
-	is_open = true
-	animation_player.play("Open")
-	# Fade the light in
-	var tween: Tween = get_tree().create_tween()
-	tween.tween_property($OmniLight3D, 'light_energy', 11.5, 0.5)
-	tween.tween_property($OmniLight3D, 'light_energy', 0, 2)
+	
+	robot_ani.victory_sign()
+	
 
 func add_highlight() -> void:
 	robot_meshinstance.set_surface_override_material(0, robot_material.duplicate())

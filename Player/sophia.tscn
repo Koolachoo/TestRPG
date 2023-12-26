@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bqtlgqmf1ohdb"]
 
 [ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://models/sophia/sophia_skin.tscn" id="1_debe3"]
-[ext_resource type="Script" path="res://sophia.gd" id="1_k3i64"]
+[ext_resource type="Script" path="res://Player/sophia.gd" id="1_k3i64"]
 [ext_resource type="PackedScene" uid="uid://bv87lqutlxhb6" path="res://systems/interaction/PlayerInteractor.tscn" id="3_uoidp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6e2n"]
