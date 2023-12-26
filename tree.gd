@@ -1,0 +1,18 @@
+extends RigidBody3D
+
+@export var dialogue_resource: DialogueResource
+@export var dialogue_start: String = "start"
+
+func action() ->void:
+	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
+
+func _on_interactable_focused(interactor):
+	pass # Replace with function body.
+
+
+func _on_interactable_interacted(interactor):
+	action()
+
+
+func _on_interactable_unfocused(interactor):
+	pass # Replace with function body.
