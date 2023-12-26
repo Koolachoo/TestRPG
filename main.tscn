@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfsrhtjrmsiup"]
+[gd_scene load_steps=7 format=3 uid="uid://cfsrhtjrmsiup"]
 
 [ext_resource type="PackedScene" uid="uid://bqtlgqmf1ohdb" path="res://Player/sophia.tscn" id="1_kl028"]
 [ext_resource type="PackedScene" uid="uid://da51n7rcs6fq8" path="res://npc.tscn" id="2_clsbd"]
+[ext_resource type="PackedScene" uid="uid://cmhnjj6ivjp37" path="res://tree.tscn" id="3_qojwg"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_88jic"]
 
@@ -31,3 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.15509, 0)
 
 [node name="NPC" parent="." instance=ExtResource("2_clsbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.31477, -1.14344, 0)
+
+[node name="Tree" parent="." instance=ExtResource("3_qojwg")]
+transform = Transform3D(0.749386, 0, 0, 0, 0.749386, 0, 0, 0, 1, -6.00608, -1.16587, -2.62904)

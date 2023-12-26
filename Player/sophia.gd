@@ -10,6 +10,11 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 func _physics_process(delta):
+	# start test dialogue
+	#if Input.is_action_just_pressed("accept"):
+		#DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/main.dialogue"), "start")
+		#return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta

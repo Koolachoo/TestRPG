@@ -15,7 +15,12 @@ var is_open: bool = false
 func open() -> void:
 	
 	robot_ani.victory_sign()
-	
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/main.dialogue"), "start")
+	return
+	robot_ani.idle()
+	$Interactable.queue_free()
+
+
 
 func add_highlight() -> void:
 	robot_meshinstance.set_surface_override_material(0, robot_material.duplicate())
@@ -27,9 +32,10 @@ func remove_highlight() -> void:
 # Open the chest if unopened
 func _on_interactable_interacted(_interactor: Interactor) -> void:
 	if not is_open:
-		remove_highlight()
 		$Interactable.queue_free()
 		open()
+	elif is_open:
+		is_open = false
 
 
 # Add white outline

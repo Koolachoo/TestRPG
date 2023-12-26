@@ -18,6 +18,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 CyclopsAutoload="*res://addons/cyclops_level_builder/cyclops_global_scene.tscn"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Dialoguestate="*res://dialoguestate.gd"
+
+[dialogue_manager]
+
+general/states=["Dialoguestate"]
 
 [dotnet]
 
@@ -25,7 +31,7 @@ project/assembly_name="Test Rpg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/cyclops_level_builder/plugin.cfg", "res://addons/gaea/plugin.cfg")
+enabled=PackedStringArray("res://addons/cyclops_level_builder/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gaea/plugin.cfg")
 
 [input]
 
@@ -64,6 +70,10 @@ cancel={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":120,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Dialogue/main.dialogue")
 
 [layer_names]
 

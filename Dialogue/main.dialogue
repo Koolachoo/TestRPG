@@ -1,0 +1,16 @@
+~ start
+Gobot: Hello Sophia!
+if apple_status == "has":
+	Sophia: I have an apple.
+	- Give to Gobot
+		set apple_status = "gave"
+		Sophia: Here you go!
+		Gobot: Thanks!
+	- Keep it
+		Sophia: But it's mine.
+		Gobot: Fair enough. 
+elif apple_status == "gave":
+	Gobot: Thanks again for the apple.
+else:
+	Gobot: I sure wish I had an apple. Apparently there's an apple tree around here somewhere...
+=> END
