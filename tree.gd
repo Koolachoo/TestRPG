@@ -1,10 +1,20 @@
 extends RigidBody3D
 
+const Balloon = preload("res://Dialogue/balloon.tscn")
+
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "start"
 
+var speaking: bool = false
+
 func action() ->void:
-	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
+	speaking = true
+	if speaking:
+		var balloon: Node = Balloon.instantiate()
+		get_tree().current_scene.add_child(balloon)
+		balloon.start(dialogue_resource, dialogue_start)
+		speaking = false
+	
 
 func _on_interactable_focused(interactor):
 	pass # Replace with function body.

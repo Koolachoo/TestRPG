@@ -14,3 +14,10 @@ elif apple_status == "gave":
 else:
 	Gobot: I sure wish I had an apple. Apparently there's an apple tree around here somewhere...
 => END
+
+~ pick_apple
+
+Sophia: It's an apple tree.
+Sophia: I'll just take one. 
+set apple_status = "has"
+=> END
