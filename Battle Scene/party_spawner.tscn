@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://8nvvg5nxnygn"]
+
+[ext_resource type="Script" path="res://Battle Scene/party_spawner.gd" id="1_bnhpr"]
+
+[node name="PartySpawner" type="Node3D"]
+script = ExtResource("1_bnhpr")
