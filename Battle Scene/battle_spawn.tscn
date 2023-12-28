@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://lt0iqea8ssm1"]
+
+[ext_resource type="Script" path="res://BattleSpawn.gd" id="1_qkg2k"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rkt6r"]
+
+[node name="BattleSpawn" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.16699, 6.6465)
+script = ExtResource("1_qkg2k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("SphereShape3D_rkt6r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

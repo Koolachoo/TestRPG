@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmhnjj6ivjp37"]
+
+[ext_resource type="Script" path="res://Props/tree.gd" id="1_hoaij"]
+[ext_resource type="PackedScene" uid="uid://6mjsc2er2nxn" path="res://models/Tree_1.gltf" id="1_p4qjb"]
+[ext_resource type="Resource" uid="uid://c2aq4e8y1lf1k" path="res://Dialogue/main.dialogue" id="2_ia5w0"]
+[ext_resource type="PackedScene" uid="uid://y2d8i5548a4h" path="res://systems/interaction/Interactable.tscn" id="2_ix1v7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2do8r"]
+size = Vector3(1, 7.37012, 1)
+
+[node name="Tree" type="RigidBody3D"]
+script = ExtResource("1_hoaij")
+dialogue_resource = ExtResource("2_ia5w0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.65674, 0)
+shape = SubResource("BoxShape3D_2do8r")
+
+[node name="Tree_12" parent="." instance=ExtResource("1_p4qjb")]
+
+[node name="Interactable" parent="." instance=ExtResource("2_ix1v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46519, 0)
+
+[connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]
+
+[editable path="Interactable"]

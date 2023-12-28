@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Dialoguestate="*res://dialoguestate.gd"
+CyclopsAutoload="*res://addons/cyclops_level_builder/cyclops_global_scene.tscn"
 
 [dialogue_manager]
 
@@ -31,7 +32,7 @@ project/assembly_name="Test Rpg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/cyclops_level_builder/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gaea/plugin.cfg")
 
 [input]
 
