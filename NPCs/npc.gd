@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export var highlight_material: StandardMaterial3D
 
 @onready var robot_ani = $GobotSkin
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+#@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var robot_meshinstance: MeshInstance3D = $GobotSkin/gobot/Armature/Skeleton3D/Gobot
 @onready var robot_material: StandardMaterial3D = robot_meshinstance.mesh.surface_get_material(0)
 @export var dialogue_resource: DialogueResource

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0up2ut66iqsb"]
+[gd_scene load_steps=5 format=3 uid="uid://d0up2ut66iqsb"]
 
 [ext_resource type="PackedScene" uid="uid://8nvvg5nxnygn" path="res://Battle Scene/party_spawner.tscn" id="1_4uqmk"]
 [ext_resource type="PackedScene" uid="uid://8iou4os6r3xy" path="res://MonsterParty/monster_cat.tscn" id="2_gw6y8"]
 [ext_resource type="PackedScene" uid="uid://kpb0ccfkk3xo" path="res://MonsterParty/monster_fish.tscn" id="3_k013x"]
+[ext_resource type="Script" path="res://Battle Scene/Test.gd" id="4_do63d"]
 
 [node name="Battle" type="Node3D"]
 
@@ -25,3 +26,46 @@ transform = Transform3D(-0.429408, 0, -0.903111, 0, 1, 0, 0.903111, 0, -0.429408
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.755408, 0.655255, 0, -0.655255, 0.755408, -5.82832, 5.95754, 0)
+
+[node name="Test" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("4_do63d")
+
+[node name="MarginContainer" type="MarginContainer" parent="Test"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -79.0
+offset_bottom = 79.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Test/MarginContainer"]
+layout_mode = 2
+
+[node name="Fight" type="Button" parent="Test/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Fight"
+
+[node name="Run" type="Button" parent="Test/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Run"
+
+[connection signal="pressed" from="Test/MarginContainer/VBoxContainer/Fight" to="PartySpawner" method="_on_fight_pressed"]
+[connection signal="pressed" from="Test/MarginContainer/VBoxContainer/Run" to="PartySpawner" method="_on_run_pressed"]
