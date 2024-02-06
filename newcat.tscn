@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp03mvlbvodqy"]
+
+[ext_resource type="PackedScene" uid="uid://i6m35te8piwl" path="res://models/Monsters/Cat/Cat.gltf" id="1_sy7xe"]
+
+[node name="Cat" instance=ExtResource("1_sy7xe")]

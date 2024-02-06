@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://kpb0ccfkk3xo"]
+
+[ext_resource type="Script" path="res://MonsterParty/monster_fish.gd" id="1_eooo6"]
+[ext_resource type="PackedScene" uid="uid://brn6tqhjxdmvc" path="res://models/Monsters/Fish/Fish.gltf" id="1_s1ano"]
+
+[node name="monster_fish" type="Node3D"]
+script = ExtResource("1_eooo6")
+
+[node name="Fish" parent="." instance=ExtResource("1_s1ano")]

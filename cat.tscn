@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcm3gcsqin6aq"]
+
+[ext_resource type="PackedScene" uid="uid://i6m35te8piwl" path="res://models/Monsters/Cat/Cat.gltf" id="1_ugl7m"]
+
+[node name="Cat" instance=ExtResource("1_ugl7m")]
+
+[node name="Skeleton3D" parent="CharacterArmature" index="0"]
+bones/1/position = Vector3(0, 0.483194, 0)
+bones/1/rotation = Quaternion(0, 0, 0, 1)
+bones/3/rotation = Quaternion(4.52382e-36, 3.54715e-10, -0.00264005, 0.999997)

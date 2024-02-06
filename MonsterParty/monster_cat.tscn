@@ -1,7 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://8iou4os6r3xy"]
+[gd_scene load_steps=4 format=3 uid="uid://8iou4os6r3xy"]
 
-[ext_resource type="PackedScene" uid="uid://i6m35te8piwl" path="res://models/Monsters/Cat/Cat.gltf" id="1_t5k66"]
+[ext_resource type="Script" path="res://MonsterParty/monster_cat.gd" id="1_140nu"]
+[ext_resource type="PackedScene" uid="uid://dp03mvlbvodqy" path="res://newcat.tscn" id="2_a8yb5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_80hu1"]
+radius = 1.21843
+height = 2.43686
 
 [node name="monster_cat" type="Node3D"]
+script = ExtResource("1_140nu")
 
-[node name="Cat" parent="." instance=ExtResource("1_t5k66")]
+[node name="Cat" parent="." instance=ExtResource("2_a8yb5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0530311, 0, -0.0697031)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.830662, 0)
+shape = SubResource("CapsuleShape3D_80hu1")

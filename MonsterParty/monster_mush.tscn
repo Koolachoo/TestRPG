@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://k5p885y0hexr"]
+
+[ext_resource type="PackedScene" uid="uid://d2eghb633adqi" path="res://models/Monsters/Mush/Mushnub.gltf" id="1_svlyd"]
+
+[node name="monster_mush" type="Node3D"]
+
+[node name="Mushnub" parent="." instance=ExtResource("1_svlyd")]
