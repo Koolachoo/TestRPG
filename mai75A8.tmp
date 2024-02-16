@@ -18,7 +18,6 @@ background_mode = 2
 sky = SubResource("Sky_wf02b")
 
 [node name="Main" type="Node3D"]
-process_mode = 3
 script = ExtResource("1_toln1")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -34,7 +33,6 @@ use_collision = true
 size = Vector3(16.7192, 0.458008, 10.9809)
 
 [node name="Sophia" parent="." instance=ExtResource("1_kl028")]
-process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.24382, 0)
 
 [node name="NPC" parent="." instance=ExtResource("2_clsbd")]
@@ -51,5 +49,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7024, -1.06888, 9.51899)
 layer = 2
 
 [node name="Pause" parent="." instance=ExtResource("6_ticir")]
-process_mode = 1
 visible = false
