@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfsrhtjrmsiup"]
+[gd_scene load_steps=12 format=3 uid="uid://cfsrhtjrmsiup"]
 
 [ext_resource type="PackedScene" uid="uid://bqtlgqmf1ohdb" path="res://Player/sophia.tscn" id="1_kl028"]
 [ext_resource type="Script" path="res://main.gd" id="1_toln1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://lt0iqea8ssm1" path="res://Battle Scene/battle_spawn.tscn" id="4_dve3u"]
 [ext_resource type="PackedScene" uid="uid://xxkttsa1jre4" path="res://Player/ui.tscn" id="5_bd3ob"]
 [ext_resource type="PackedScene" uid="uid://d34iwtcg2jxfw" path="res://Menus/pause.tscn" id="6_ticir"]
+[ext_resource type="PackedScene" uid="uid://8iou4os6r3xy" path="res://MonsterParty/monster_cat.tscn" id="8_o1qhd"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_88jic"]
 
@@ -53,3 +54,6 @@ layer = 2
 [node name="Pause" parent="." instance=ExtResource("6_ticir")]
 process_mode = 1
 visible = false
+
+[node name="monster_cat" parent="." instance=ExtResource("8_o1qhd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.578, -1.15638, 9.22488)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm67wesbxh5y6"]
+
+[ext_resource type="Texture2D" uid="uid://djqt121o6epfc" path="res://sprites/20180603052830!PokeGoldDemo-front_153.png" id="1_awthb"]
+
+[node name="Hanamogura" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_awthb")
