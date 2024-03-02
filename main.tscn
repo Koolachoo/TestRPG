@@ -46,7 +46,8 @@ transform = Transform3D(0.749386, 0, 0, 0, 0.749386, 0, 0, 0, 1, -6.00608, -1.16
 dialogue_start = "pick_apple"
 
 [node name="BattleSpawn" parent="." instance=ExtResource("4_dve3u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7024, -1.06888, 9.51899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9265, -1.06888, 3.08794)
+script = null
 
 [node name="UI" parent="." instance=ExtResource("5_bd3ob")]
 layer = 2
@@ -56,4 +57,6 @@ process_mode = 1
 visible = false
 
 [node name="monster_cat" parent="." instance=ExtResource("8_o1qhd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.578, -1.15638, 9.22488)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85518, -1.15638, 3.06711)
+
+[connection signal="body_entered" from="BattleSpawn" to="." method="_on_battle_spawn_body_entered"]

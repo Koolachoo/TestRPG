@@ -5,7 +5,7 @@ extends Node
 func _ready():
 	print(selectedMonsters)
 	addMonster("Cat")
-	addEXP(100)
+	#addEXP(100)
 	print(selectedMonsters)
 
 
@@ -44,7 +44,13 @@ var databaseMonsters = {
 				"Target" : "Monster",
 				"Damage" : 10,
 				"Cost": 2
-			}}},
+			},
+			3: {"Name": "Lick",
+				"Target" : "Monster",
+				"Damage" : 10,
+				"Cost": 2}
+			
+			}},
 	1: {"Name": "Fish",
 		"Type": "Aqua",
 		"HP": 100,
@@ -142,11 +148,11 @@ func addMonster(Name):
 			selectedMonsters[selectedMonsters.size()] = tempDic
 
 
-func addEXP(amount):
-	for i in selectedMonsters:
-		selectedMonsters[i]["Exp"] += amount
-		if selectedMonsters[i]["Exp"] >= selectedMonsters[i]["MaxExp"]:
-			#level up
-			selectedMonsters[i]["Level"] += 1
-			selectedMonsters[i]["Exp"] = 0
-			selectedMonsters[i]["MaxExp"] = selectedMonsters[i]["MaxExp"]*1.5
+#func addEXP(amount):
+	#for i in selectedMonsters:
+		#selectedMonsters[i]["Exp"] += amount
+		#if selectedMonsters[i]["Exp"] >= selectedMonsters[i]["MaxExp"]:
+			##level up
+			#selectedMonsters[i]["Level"] += 1
+			#selectedMonsters[i]["Exp"] = 0
+			#selectedMonsters[i]["MaxExp"] = selectedMonsters[i]["MaxExp"]*1.5

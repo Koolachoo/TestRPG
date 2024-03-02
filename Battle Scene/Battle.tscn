@@ -1,16 +1,99 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0up2ut66iqsb"]
+[gd_scene load_steps=16 format=3 uid="uid://d0up2ut66iqsb"]
 
 [ext_resource type="PackedScene" uid="uid://8nvvg5nxnygn" path="res://Battle Scene/party_spawner.tscn" id="1_4uqmk"]
+[ext_resource type="Script" path="res://Battle Scene/Battle.gd" id="1_hy701"]
 [ext_resource type="PackedScene" uid="uid://8iou4os6r3xy" path="res://MonsterParty/monster_cat.tscn" id="2_gw6y8"]
 [ext_resource type="PackedScene" uid="uid://kpb0ccfkk3xo" path="res://MonsterParty/monster_fish.tscn" id="3_k013x"]
-[ext_resource type="Script" path="res://Battle Scene/Test.gd" id="4_do63d"]
+[ext_resource type="Script" path="res://Battle Scene/UI.gd" id="5_3xu4t"]
+[ext_resource type="Script" path="res://Battle Scene/EnemyUI.gd" id="6_2bver"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_415p0"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xlvsc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r70qw"]
+bg_color = Color(0, 0.721569, 0.309804, 1)
+
+[sub_resource type="Animation" id="Animation_uxvxa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-10.695, -10.695, -10.695)]
+}
+
+[sub_resource type="Animation" id="Animation_mf0k3"]
+resource_name = "grow"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_luk3x"]
+_data = {
+"RESET": SubResource("Animation_uxvxa"),
+"grow": SubResource("Animation_mf0k3")
+}
+
+[sub_resource type="Animation" id="Animation_ofb3f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-10.69, -10.69, -10.69)]
+}
+
+[sub_resource type="Animation" id="Animation_e3gf4"]
+resource_name = "grow"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_an51o"]
+_data = {
+"RESET": SubResource("Animation_ofb3f"),
+"grow": SubResource("Animation_e3gf4")
+}
+
 [node name="Battle" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_hy701")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.427019, 0.376267, -0.82224, -0.00312787, 0.908693, 0.417453, 0.904237, 0.180832, -0.386852, -15.1106, 3.85781, -6.56051)
+transform = Transform3D(-0.424897, 0.471436, -0.772794, 0.0426301, 0.863161, 0.503125, 0.904237, 0.180832, -0.386852, -15.1106, 3.97747, -6.56051)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -7.5)
@@ -23,14 +106,16 @@ mob_scene = ExtResource("2_gw6y8")
 
 [node name="monster_cat" parent="." instance=ExtResource("2_gw6y8")]
 transform = Transform3D(0.464007, 0, 0.885831, 0, 1, 0, -0.885831, 0, 0.464007, -11.7888, 0.694715, -5.41601)
+visible = false
 
 [node name="monster_fish" parent="." instance=ExtResource("3_k013x")]
 transform = Transform3D(-0.429408, 0, -0.903111, 0, 1, 0, 0.903111, 0, -0.429408, -3.4201, 0.800373, -2.14643)
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.755408, 0.655255, 0, -0.655255, 0.755408, -5.82832, 5.95754, 0)
 
-[node name="Test" type="Control" parent="."]
+[node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 6
 anchor_left = 1.0
@@ -42,9 +127,9 @@ offset_top = -20.0
 offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
-script = ExtResource("4_do63d")
+script = ExtResource("5_3xu4t")
 
-[node name="MarginContainer" type="MarginContainer" parent="Test"]
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -57,18 +142,206 @@ offset_bottom = 79.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Test/MarginContainer"]
+[node name="FightMenu" type="VBoxContainer" parent="UI/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="Fight" type="Button" parent="Test/MarginContainer/VBoxContainer"]
+[node name="Fight" type="Button" parent="UI/MarginContainer/FightMenu"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+focus_neighbor_top = NodePath("../Run")
+focus_neighbor_bottom = NodePath("../Stats")
+theme_override_font_sizes/font_size = 30
 text = "Fight"
 
-[node name="Run" type="Button" parent="Test/MarginContainer/VBoxContainer"]
+[node name="Stats" type="Button" parent="UI/MarginContainer/FightMenu"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+focus_neighbor_top = NodePath("../Fight")
+focus_neighbor_bottom = NodePath("../Switch")
+theme_override_font_sizes/font_size = 30
+text = "Stats"
+
+[node name="Switch" type="Button" parent="UI/MarginContainer/FightMenu"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Stats")
+focus_neighbor_bottom = NodePath("../Capture")
+theme_override_font_sizes/font_size = 30
+text = "Switch"
+
+[node name="Capture" type="Button" parent="UI/MarginContainer/FightMenu"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Switch")
+focus_neighbor_bottom = NodePath("../Run")
+theme_override_font_sizes/font_size = 30
+text = "Capture"
+
+[node name="Run" type="Button" parent="UI/MarginContainer/FightMenu"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Capture")
+focus_neighbor_bottom = NodePath("../Fight")
+theme_override_font_sizes/font_size = 30
 text = "Run"
 
-[connection signal="pressed" from="Test/MarginContainer/VBoxContainer/Fight" to="PartySpawner" method="_on_fight_pressed"]
-[connection signal="pressed" from="Test/MarginContainer/VBoxContainer/Run" to="PartySpawner" method="_on_run_pressed"]
+[node name="Moves" type="GridContainer" parent="UI/MarginContainer"]
+visible = false
+layout_mode = 2
+columns = 2
+
+[node name="Move 1" type="Button" parent="UI/MarginContainer/Moves"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Move 2")
+focus_neighbor_top = NodePath("../Cancel")
+focus_neighbor_right = NodePath("../Move 2")
+focus_neighbor_bottom = NodePath("../Move 3")
+text = "Move 1"
+
+[node name="Move 2" type="Button" parent="UI/MarginContainer/Moves"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Move 1")
+focus_neighbor_top = NodePath("../Cancel")
+focus_neighbor_right = NodePath("../Move 1")
+focus_neighbor_bottom = NodePath("../Move 4")
+text = "Move 2"
+
+[node name="Move 3" type="Button" parent="UI/MarginContainer/Moves"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Move 4")
+focus_neighbor_top = NodePath("../Move 1")
+focus_neighbor_right = NodePath("../Move 4")
+focus_neighbor_bottom = NodePath("../Cancel")
+text = "Move 3"
+
+[node name="Move 4" type="Button" parent="UI/MarginContainer/Moves"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Move 3")
+focus_neighbor_top = NodePath("../Move 2")
+focus_neighbor_right = NodePath("../Move 3")
+focus_neighbor_bottom = NodePath("../Cancel")
+text = "Move 4"
+
+[node name="Cancel" type="Button" parent="UI/MarginContainer/Moves"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="Switch" type="VBoxContainer" parent="UI/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Monster 1" type="Button" parent="UI/MarginContainer/Switch"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Cancel")
+focus_neighbor_bottom = NodePath("../Monster 2")
+
+[node name="Monster 2" type="Button" parent="UI/MarginContainer/Switch"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Monster 1")
+focus_neighbor_bottom = NodePath("../Monster 3")
+
+[node name="Monster 3" type="Button" parent="UI/MarginContainer/Switch"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Monster 2")
+focus_neighbor_bottom = NodePath("../Cancel")
+
+[node name="Cancel" type="Button" parent="UI/MarginContainer/Switch"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Monster 3")
+focus_neighbor_bottom = NodePath("../Monster 1")
+text = "Cancel"
+
+[node name="PlayerHP" type="ProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = -1111.0
+offset_top = 263.0
+offset_right = -621.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/background = SubResource("StyleBoxEmpty_xlvsc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_r70qw")
+value = 100.0
+show_percentage = false
+
+[node name="Info" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -1113.0
+offset_top = 219.0
+offset_right = -890.0
+offset_bottom = 261.0
+theme_override_font_sizes/font_size = 30
+text = "Demon LVL 100"
+
+[node name="HPtxt" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -615.0
+offset_top = 264.0
+offset_right = -572.0
+offset_bottom = 287.0
+theme_override_font_sizes/font_size = 30
+text = "10/10"
+
+[node name="Action" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -467.0
+offset_top = 259.0
+offset_right = -39.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 48
+text = "This is information"
+
+[node name="Player" type="Node3D" parent="."]
+transform = Transform3D(-4.76373, 0, -9.57548, 0, -10.695, 0, 9.57548, 0, -4.76373, -12.2831, 1, -4.69718)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+libraries = {
+"": SubResource("AnimationLibrary_luk3x")
+}
+
+[node name="Enemy" type="Node3D" parent="."]
+transform = Transform3D(1.51621, 0, 10.5819, 0, -10.69, 0, -10.5819, 0, 1.51621, -3.67086, 0.636407, -2.83439)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
+libraries = {
+"": SubResource("AnimationLibrary_an51o")
+}
+
+[node name="EnemyUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_2bver")
+
+[node name="EnemyHP" type="ProgressBar" parent="EnemyUI"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 45.0
+offset_right = 493.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/background = SubResource("StyleBoxEmpty_xlvsc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_r70qw")
+value = 100.0
+show_percentage = false
+
+[node name="Info2" type="Label" parent="EnemyUI"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 224.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 30
+text = "Demon LVL 100"
+
+[node name="HPtxt2" type="Label" parent="EnemyUI"]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 46.0
+offset_right = 579.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 30
+text = "10/10"
+
+[connection signal="pressed" from="UI/MarginContainer/FightMenu/Fight" to="." method="_on_fight_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/FightMenu/Switch" to="." method="_on_switch_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/FightMenu/Capture" to="." method="_on_capture_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/FightMenu/Run" to="UI" method="_on_run_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/Moves/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/Switch/Cancel" to="." method="_on_cancel_pressed"]
