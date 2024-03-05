@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0up2ut66iqsb"]
+[gd_scene load_steps=17 format=3 uid="uid://d0up2ut66iqsb"]
 
 [ext_resource type="PackedScene" uid="uid://8nvvg5nxnygn" path="res://Battle Scene/party_spawner.tscn" id="1_4uqmk"]
 [ext_resource type="Script" path="res://Battle Scene/Battle.gd" id="1_hy701"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://kpb0ccfkk3xo" path="res://MonsterParty/monster_fish.tscn" id="3_k013x"]
 [ext_resource type="Script" path="res://Battle Scene/UI.gd" id="5_3xu4t"]
 [ext_resource type="Script" path="res://Battle Scene/EnemyUI.gd" id="6_2bver"]
+[ext_resource type="AudioStream" uid="uid://b1pca4vgd4k8l" path="res://Music/27. Wild Digimon Battle.mp3" id="7_cspj7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_415p0"]
 
@@ -338,6 +339,10 @@ offset_right = 579.0
 offset_bottom = 88.0
 theme_override_font_sizes/font_size = 30
 text = "10/10"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_cspj7")
+autoplay = true
 
 [connection signal="pressed" from="UI/MarginContainer/FightMenu/Fight" to="." method="_on_fight_pressed"]
 [connection signal="pressed" from="UI/MarginContainer/FightMenu/Switch" to="." method="_on_switch_pressed"]
