@@ -24,8 +24,10 @@ func _on_battle_spawn_body_entered(body):
 		#$UI/AnimationPlayer.play("TransIn")
 		get_tree().paused = not get_tree().paused
 		#await get_tree().create_timer(1.5).timeout
-		var battleTemp = battle.instantiate()
-		get_parent().add_child(battleTemp)
+		#var battleTemp = battle.instantiate()
+		#get_parent().add_child(battleTemp)
+		var current_scene = get_tree().get_current_scene()
+		get_tree().change_scene_to("res://Battle Scene/Battle.tscn", current_scene)
 		#get_tree().change_scene_to_file("res://Battle Scene/Battle.tscn")
 		#queue_free()
 		#$UI/AnimationPlayer.play("TransOut")

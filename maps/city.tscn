@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfmp3dvctdhq0"]
+
+[ext_resource type="PackedScene" uid="uid://chj33runi0uvg" path="res://models/accumula/accumula.tscn" id="1_g3jah"]
+
+[node name="city" type="Node3D"]
+
+[node name="Accumula" parent="." instance=ExtResource("1_g3jah")]

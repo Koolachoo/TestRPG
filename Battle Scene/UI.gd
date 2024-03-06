@@ -6,8 +6,9 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_run_pressed():
-	get_tree().change_scene("res://main.tscn")
-	get_parent().queue_free()
+	get_tree().pop_scene()
+	#get_tree().change_scene("res://main.tscn")
+	#get_parent().queue_free()
 	get_tree().paused = not get_tree().paused
 	#get_tree().paused = not get_tree().paused
 

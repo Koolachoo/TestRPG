@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://chj33runi0uvg"]
+
+[ext_resource type="PackedScene" uid="uid://csuwibx1nhs6y" path="res://models/accumula/Accumula.glb" id="1_msc3l"]
+
+[node name="Accumula-colony" instance=ExtResource("1_msc3l")]
