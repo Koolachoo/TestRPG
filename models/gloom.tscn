@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3p01tx6o4j8s"]
+
+[ext_resource type="PackedScene" uid="uid://kojmv582twn2" path="res://models/Tai/gloom.glb" id="1_wfut2"]
+
+[node name="Gloom" type="Node3D"]
+
+[node name="gloom" parent="." instance=ExtResource("1_wfut2")]
