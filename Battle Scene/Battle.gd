@@ -12,7 +12,11 @@ func _ready():
 	set_player()
 	set_enemy()
 
-
+func get_demon():
+	for i in Game.selectedMonsters:
+		var monTemp = Game.selectedMonsters[i]["Scene"].instantiate
+		monTemp.name = Game.selectedMonsters[i]["Name"]
+		monTemp.hide()
 func set_player():
 	var playtemp = cat.instantiate()
 	$Player.add_child(playtemp)

@@ -5,6 +5,7 @@ extends Node
 func _ready():
 	print(selectedMonsters)
 	addMonster("Cat")
+	addMonster("Fish")
 	#addEXP(100)
 	print(selectedMonsters)
 
