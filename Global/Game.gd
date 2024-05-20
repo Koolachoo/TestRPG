@@ -3,11 +3,15 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(selectedMonsters)
+	#print(selectedMonsters)
 	addMonster("Cat")
 	addMonster("Fish")
+	addMonster("Fish")
+	addMonster("Mush")
+	addMonster("Orc")
+	addMonster("Balloon")
 	#addEXP(100)
-	print(selectedMonsters)
+	#print(selectedMonsters)
 
 
 var type = {
@@ -135,8 +139,35 @@ var databaseMonsters = {
 				"Target" : "Monster",
 				"Damage" : 10,
 				"Cost": 2
-			}
-}}}
+			}}},
+	4: {"Name": "Balloon",
+		"Type": "Air",
+		"HP": 100,
+		"Level": 1,
+		"Exp": 0,
+		"MaxExp": 10,
+		"Attack": 20,
+		"Defense": 20,
+		"Scene":preload("res://MonsterParty/monster_balloon.tscn"),
+		"Attacks": {
+			0: {
+				"Name": "Bite",
+				"Target" : "Monster",
+				"Damage" : 10,
+				"Cost": 2
+			},
+			1: {
+				"Name": "Howl",
+				"Target" : "Monster",
+				"Damage" : 10,
+				"Cost": 2
+			},
+			2: {
+				"Name": "Blast",
+				"Target" : "Monster",
+				"Damage" : 10,
+				"Cost": 2
+			}}}}
 
 var selectedMonsters = {
 	

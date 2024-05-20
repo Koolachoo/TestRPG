@@ -8,15 +8,26 @@ var fish = preload("res://MonsterParty/monster_fish.tscn")
 var selected = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	main_buttons_ready()
-	set_player()
 	set_enemy()
+	main_buttons_ready()
+	
+	for i in Game.selectedMonsters:
+		var monTemp = Game.selectedMonsters[i]["Scene"].instantiate()
+		monTemp.name = Game.selectedMonsters[i]["Name"]
+		monTemp.hide()
+		$Player.add_child(monTemp)
+	$Player.get_child(4).show()
+	playani.play("grow")
+	#set_player()
+	
 
 func get_demon():
 	for i in Game.selectedMonsters:
 		var monTemp = Game.selectedMonsters[i]["Scene"].instantiate
 		monTemp.name = Game.selectedMonsters[i]["Name"]
 		monTemp.hide()
+		#$Player.add_child(monTemp)
+		
 func set_player():
 	var playtemp = cat.instantiate()
 	$Player.add_child(playtemp)
@@ -24,8 +35,8 @@ func set_player():
 	
 
 func set_enemy():
-	var enemtemp = fish.instantiate()
-	$Enemy.add_child(enemtemp)
+	var monTemp = fish.instantiate()
+	$Enemy.add_child(monTemp)
 	enemani.play("grow")
 
 func main_buttons_ready():

@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cfsrhtjrmsiup"]
+[gd_scene load_steps=15 format=3 uid="uid://cfsrhtjrmsiup"]
 
 [ext_resource type="PackedScene" uid="uid://bqtlgqmf1ohdb" path="res://Player/sophia.tscn" id="1_kl028"]
 [ext_resource type="Script" path="res://main.gd" id="1_toln1"]
 [ext_resource type="PackedScene" uid="uid://da51n7rcs6fq8" path="res://NPCs/npc.tscn" id="2_clsbd"]
+[ext_resource type="Texture2D" uid="uid://di8kpvkdu5xn3" path="res://Textures/hand_painted_grass.png" id="2_yjb3r"]
 [ext_resource type="PackedScene" uid="uid://cmhnjj6ivjp37" path="res://Props/tree.tscn" id="3_qojwg"]
 [ext_resource type="PackedScene" uid="uid://lt0iqea8ssm1" path="res://Battle Scene/battle_spawn.tscn" id="4_dve3u"]
 [ext_resource type="PackedScene" uid="uid://xxkttsa1jre4" path="res://Player/ui.tscn" id="5_bd3ob"]
@@ -19,6 +20,12 @@ sky_material = SubResource("PhysicalSkyMaterial_88jic")
 background_mode = 2
 sky = SubResource("Sky_wf02b")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7swkd"]
+albedo_texture = ExtResource("2_yjb3r")
+subsurf_scatter_enabled = true
+uv1_scale = Vector3(5.9, 5.9, 5.9)
+uv1_offset = Vector3(-1.445, 0, 0)
+
 [node name="Main" type="Node3D"]
 process_mode = 3
 script = ExtResource("1_toln1")
@@ -32,6 +39,7 @@ shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(2.40113, 0, 0, 0, 2.40113, 0, 0, 0, 2.40113, 1.4598, -1.75854, 4.31283)
+material_override = SubResource("StandardMaterial3D_7swkd")
 use_collision = true
 size = Vector3(16.7192, 0.458008, 10.9809)
 
