@@ -1,14 +1,26 @@
-[gd_scene load_steps=17 format=3 uid="uid://d0up2ut66iqsb"]
+[gd_scene load_steps=25 format=3 uid="uid://d0up2ut66iqsb"]
 
 [ext_resource type="PackedScene" uid="uid://8nvvg5nxnygn" path="res://Battle Scene/party_spawner.tscn" id="1_4uqmk"]
 [ext_resource type="Script" path="res://Battle Scene/Battle.gd" id="1_hy701"]
 [ext_resource type="PackedScene" uid="uid://8iou4os6r3xy" path="res://MonsterParty/monster_cat.tscn" id="2_gw6y8"]
+[ext_resource type="Texture2D" uid="uid://bu4jbcbfu8rue" path="res://Textures/pavement_textures/pavement_02_diff_4k.png" id="2_jq5hr"]
 [ext_resource type="PackedScene" uid="uid://kpb0ccfkk3xo" path="res://MonsterParty/monster_fish.tscn" id="3_k013x"]
+[ext_resource type="Texture2D" uid="uid://bfd4odfpdk3t8" path="res://Textures/pavement_textures/pavement_02_ao_4k.png" id="3_vnqbc"]
+[ext_resource type="Texture2D" uid="uid://co5qfu8d3yhfx" path="res://Textures/pavement_textures/pavement_02_nor_gl_4k.png" id="4_vjo5w"]
 [ext_resource type="Script" path="res://Battle Scene/UI.gd" id="5_3xu4t"]
+[ext_resource type="Texture2D" uid="uid://bjjwwjof3dw2h" path="res://Textures/pavement_textures/pavement_02_rough_4k.png" id="5_17odw"]
 [ext_resource type="Script" path="res://Battle Scene/EnemyUI.gd" id="6_2bver"]
 [ext_resource type="AudioStream" uid="uid://b1pca4vgd4k8l" path="res://Music/27. Wild Digimon Battle.mp3" id="7_cspj7"]
+[ext_resource type="Texture2D" uid="uid://djwr6o3b175bl" path="res://Textures/autumn_field_puresky.jpg" id="8_t8xtf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_415p0"]
+albedo_texture = ExtResource("2_jq5hr")
+roughness_texture = ExtResource("5_17odw")
+normal_enabled = true
+normal_texture = ExtResource("4_vjo5w")
+ao_enabled = true
+ao_texture = ExtResource("3_vnqbc")
+uv1_scale = Vector3(5.45, 5.45, 5.45)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xlvsc"]
 
@@ -89,12 +101,22 @@ _data = {
 "grow": SubResource("Animation_e3gf4")
 }
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4gdbm"]
+panorama = ExtResource("8_t8xtf")
+
+[sub_resource type="Sky" id="Sky_vqo5x"]
+sky_material = SubResource("PanoramaSkyMaterial_4gdbm")
+
+[sub_resource type="Environment" id="Environment_s0aaw"]
+background_mode = 2
+sky = SubResource("Sky_vqo5x")
+
 [node name="Battle" type="Node3D"]
 process_mode = 3
 script = ExtResource("1_hy701")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.424897, 0.471436, -0.772794, 0.0426301, 0.863161, 0.503125, 0.904237, 0.180832, -0.386852, -15.1106, 3.97747, -6.56051)
+transform = Transform3D(-0.0506155, 0.289282, -0.955905, 0.0152962, 0.957244, 0.288878, 0.998601, -9.3002e-10, -0.0528763, -15.1106, 3.97747, -7.34135)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -7.5)
@@ -288,7 +310,7 @@ theme_override_font_sizes/font_size = 48
 text = "This is information"
 
 [node name="Player" type="Node3D" parent="."]
-transform = Transform3D(-4.76373, 0, -9.57548, 0, -10.695, 0, 9.57548, 0, -4.76373, -12.2831, 1, -4.69718)
+transform = Transform3D(-4.76373, 0, -9.57548, 0, -10.695, 0, 9.57548, 0, -4.76373, -7.81618, 1, -12.1526)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 libraries = {
@@ -296,7 +318,7 @@ libraries = {
 }
 
 [node name="Enemy" type="Node3D" parent="."]
-transform = Transform3D(1.51621, 0, 10.5819, 0, -10.69, 0, -10.5819, 0, 1.51621, -3.67086, 0.636407, -2.83439)
+transform = Transform3D(9.70937, 0, -4.4726, 0, -10.69, 0, 4.4726, 0, 9.70937, -7.33768, 0.636407, -2.83439)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
 libraries = {
@@ -342,6 +364,9 @@ text = "10/10"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_cspj7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_s0aaw")
 
 [connection signal="pressed" from="UI/MarginContainer/FightMenu/Fight" to="." method="_on_fight_pressed"]
 [connection signal="pressed" from="UI/MarginContainer/FightMenu/Switch" to="." method="_on_switch_pressed"]

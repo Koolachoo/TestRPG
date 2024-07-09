@@ -16,7 +16,7 @@ func _ready():
 		monTemp.name = Game.selectedMonsters[i]["Name"]
 		monTemp.hide()
 		$Player.add_child(monTemp)
-	$Player.get_child(4).show()
+	$Player.get_child(6).show()
 	playani.play("grow")
 	#set_player()
 	

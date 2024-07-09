@@ -7,6 +7,7 @@ radius = 0.294668
 height = 0.782425
 
 [node name="monster_balloon" type="Node3D"]
+transform = Transform3D(6.445, 0, 0, 0, 6.445, 0, 0, 0, 6.445, 0, 2.47216, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 billboard = 1

@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cfsrhtjrmsiup"]
+[gd_scene load_steps=16 format=3 uid="uid://cfsrhtjrmsiup"]
 
 [ext_resource type="PackedScene" uid="uid://bqtlgqmf1ohdb" path="res://Player/sophia.tscn" id="1_kl028"]
 [ext_resource type="Script" path="res://main.gd" id="1_toln1"]
 [ext_resource type="PackedScene" uid="uid://da51n7rcs6fq8" path="res://NPCs/npc.tscn" id="2_clsbd"]
+[ext_resource type="Texture2D" uid="uid://djwr6o3b175bl" path="res://Textures/autumn_field_puresky.jpg" id="2_dysqt"]
 [ext_resource type="Texture2D" uid="uid://di8kpvkdu5xn3" path="res://Textures/hand_painted_grass.png" id="2_yjb3r"]
 [ext_resource type="PackedScene" uid="uid://cmhnjj6ivjp37" path="res://Props/tree.tscn" id="3_qojwg"]
 [ext_resource type="PackedScene" uid="uid://lt0iqea8ssm1" path="res://Battle Scene/battle_spawn.tscn" id="4_dve3u"]
@@ -11,14 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://8iou4os6r3xy" path="res://MonsterParty/monster_cat.tscn" id="8_o1qhd"]
 [ext_resource type="AudioStream" uid="uid://blrn8yipbu243" path="res://Music/49_The Wavering Forest.mp3" id="9_0607v"]
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_88jic"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_c66mp"]
+panorama = ExtResource("2_dysqt")
 
-[sub_resource type="Sky" id="Sky_wf02b"]
-sky_material = SubResource("PhysicalSkyMaterial_88jic")
+[sub_resource type="Sky" id="Sky_p4mrx"]
+sky_material = SubResource("PanoramaSkyMaterial_c66mp")
 
 [sub_resource type="Environment" id="Environment_i6ew0"]
 background_mode = 2
-sky = SubResource("Sky_wf02b")
+sky = SubResource("Sky_p4mrx")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7swkd"]
 albedo_texture = ExtResource("2_yjb3r")
