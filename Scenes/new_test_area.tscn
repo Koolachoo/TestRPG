@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cc76te3x7nre1"]
+
+[node name="test floor" type="Node3D"]
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+transform = Transform3D(12.6323, 0, 0, 0, 0.0587979, 0, 0, 0, 7.25512, -2.71552, 0, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 1.0211, -0.0187257)

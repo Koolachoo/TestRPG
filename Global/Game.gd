@@ -10,6 +10,7 @@ func _ready():
 	addMonster("Mush")
 	addMonster("Orc")
 	addMonster("Balloon")
+	addMonster("Boar")
 	#addEXP(100)
 	#print(selectedMonsters)
 
@@ -17,8 +18,8 @@ func _ready():
 var type = {
 	0: {
 		"Name": "Wild"
-		
-	}
+	},
+	1: {"Name": "Air"}
 }
 var databaseMonsters = {
 	0: {
@@ -149,6 +150,34 @@ var databaseMonsters = {
 		"Attack": 20,
 		"Defense": 20,
 		"Scene":preload("res://MonsterParty/monster_balloon.tscn"),
+		"Attacks": {
+			0: {
+				"Name": "Bite",
+				"Target" : "Monster",
+				"Damage" : 10,
+				"Cost": 2
+			},
+			1: {
+				"Name": "Howl",
+				"Target" : "Monster",
+				"Damage" : 10,
+				"Cost": 2
+			},
+			2: {
+				"Name": "Blast",
+				"Target" : "Monster",
+				"Damage" : 10,
+				"Cost": 2
+			}}},
+	5: {"Name": "Boar",
+		"Type": "Wild",
+		"HP": 100,
+		"Level": 1,
+		"Exp": 0,
+		"MaxExp": 10,
+		"Attack": 20,
+		"Defense": 20,
+		"Scene":preload("res://MonsterParty/monster_boar.tscn"),
 		"Attacks": {
 			0: {
 				"Name": "Bite",

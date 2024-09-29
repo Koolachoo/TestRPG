@@ -5,10 +5,11 @@ extends Node3D
 @onready var enemani = $Enemy/AnimationPlayer
 var cat = preload("res://MonsterParty/monster_cat.tscn")
 var fish = preload("res://MonsterParty/monster_fish.tscn")
-var selected = 0
+var selected = 5
+var enselected = 6
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	set_enemy()
+	#set_enemy()
 	main_buttons_ready()
 	
 	for i in Game.selectedMonsters:
@@ -16,8 +17,15 @@ func _ready():
 		monTemp.name = Game.selectedMonsters[i]["Name"]
 		monTemp.hide()
 		$Player.add_child(monTemp)
+	for i in Game.selectedMonsters:
+		var enemyTemp = Game.selectedMonsters[i]["Scene"].instantiate()
+		enemyTemp.name = Game.selectedMonsters[i]["Name"]
+		enemyTemp.hide()
+		$Enemy.add_child(enemyTemp)
 	$Player.get_child(6).show()
+	$Enemy.get_child(7).show()
 	playani.play("grow")
+	enemani.play("grow")
 	#set_player()
 	
 
@@ -93,5 +101,3 @@ func _on_switch_pressed():
 func _on_capture_pressed():
 	$UI/MarginContainer/FightMenu.visible = false
 	
-
-

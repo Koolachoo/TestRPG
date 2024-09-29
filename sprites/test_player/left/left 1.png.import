@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deh7gd5dm4xu5"
-path.s3tc="res://.godot/imported/balloon2.png-6e40dec9cbfde62da4f03727408ca6c1.s3tc.ctex"
+uid="uid://bhi3rm02dykyc"
+path.s3tc="res://.godot/imported/left 1.png-ce6547c2b9884b0472fd43795ce20892.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/mons/balloon2.png"
-dest_files=["res://.godot/imported/balloon2.png-6e40dec9cbfde62da4f03727408ca6c1.s3tc.ctex"]
+source_file="res://sprites/test_player/left/left 1.png"
+dest_files=["res://.godot/imported/left 1.png-ce6547c2b9884b0472fd43795ce20892.s3tc.ctex"]
 
 [params]
 

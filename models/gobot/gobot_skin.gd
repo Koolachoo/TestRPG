@@ -51,8 +51,9 @@ func _set_blink(state: bool):
 	if blink:
 		_blink_timer.start(0.2)
 	else:
-		_blink_timer.stop()
-		_closed_eyes_timer.stop()
+		pass
+		#_blink_timer.stop()
+		#_closed_eyes_timer.stop()
 
 ## Sets the model to a neutral, action-free state.
 func idle():

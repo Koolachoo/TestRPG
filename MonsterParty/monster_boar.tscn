@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://buqx5a3m8d16e"]
+[gd_scene load_steps=3 format=3 uid="uid://cp5wbov8oxmad"]
 
-[ext_resource type="Texture2D" uid="uid://deh7gd5dm4xu5" path="res://sprites/mons/balloon2.png" id="1_bxr42"]
+[ext_resource type="Texture2D" uid="uid://dc7e0w184odo7" path="res://sprites/mons/boar.png" id="1_bhwvt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2da3h"]
 radius = 0.294668
@@ -10,9 +10,10 @@ height = 0.782425
 transform = Transform3D(0.63, 0, 0, 0, 0.63, 0, 0, 0, 0.63, 0, 1.10418, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.465544, 0)
 billboard = 1
 texture_filter = 2
-texture = ExtResource("1_bxr42")
+texture = ExtResource("1_bhwvt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_2da3h")

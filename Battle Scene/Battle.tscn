@@ -334,10 +334,10 @@ script = ExtResource("6_2bver")
 
 [node name="EnemyHP" type="ProgressBar" parent="EnemyUI"]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 45.0
-offset_right = 493.0
-offset_bottom = 122.0
+offset_left = 651.0
+offset_top = 38.0
+offset_right = 1141.0
+offset_bottom = 115.0
 theme_override_font_sizes/font_size = 50
 theme_override_styles/background = SubResource("StyleBoxEmpty_xlvsc")
 theme_override_styles/fill = SubResource("StyleBoxFlat_r70qw")
@@ -346,19 +346,19 @@ show_percentage = false
 
 [node name="Info2" type="Label" parent="EnemyUI"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 224.0
-offset_bottom = 43.0
+offset_left = 914.0
+offset_top = -3.0
+offset_right = 1138.0
+offset_bottom = 39.0
 theme_override_font_sizes/font_size = 30
 text = "Demon LVL 100"
 
 [node name="HPtxt2" type="Label" parent="EnemyUI"]
 layout_mode = 0
-offset_left = 499.0
-offset_top = 46.0
-offset_right = 579.0
-offset_bottom = 88.0
+offset_left = 554.0
+offset_top = 50.0
+offset_right = 634.0
+offset_bottom = 92.0
 theme_override_font_sizes/font_size = 30
 text = "10/10"
 

@@ -1,7 +1,10 @@
 extends Control
 
+@onready var monName = Game.selectedMonsters[get_parent().selected]["Name"]
+@onready var enName = Game.selectedMonsters[get_parent().enselected]["Name"]
 
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
 	pass # Replace with function body.
 
@@ -17,9 +20,12 @@ func _on_run_pressed():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
+	
 	$PlayerHP.value = Game.selectedMonsters[get_parent().selected]["HP"]
-	$Info.text = str(Game.selectedMonsters[get_parent().selected]["Name"]) + " LVL:" + str(Game.selectedMonsters[get_parent().selected]["Level"])
+	$Info.text = str(monName) + " LVL:" + str(Game.selectedMonsters[get_parent().selected]["Level"])
 	$HPtxt.text = str(Game.selectedMonsters[get_parent().selected]["HP"])
+
 	#SET ATTACK NAMES
 	for i in Game.selectedMonsters[get_parent().selected]["Attacks"]:
 		var path = "MarginContainer/Moves/Move " + str(((i)+1))

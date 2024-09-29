@@ -2096,6 +2096,7 @@ node_connections = [&"FlipShot", 0, &"StateMachine", &"FlipShot", 1, &"Flip", &"
 [node name="GobotSkin" type="Node3D" node_paths=PackedStringArray("gobot_model")]
 script = ExtResource("1_rwke8")
 gobot_model = NodePath("gobot/Armature/Skeleton3D/Gobot")
+blink = false
 _left_eye_mat_override = "surface_material_override/1"
 _right_eye_mat_override = "surface_material_override/2"
 _open_eye = ExtResource("3_aysq5")
@@ -2108,14 +2109,14 @@ bones/0/position = Vector3(0.125361, 0.0989139, 0.0728901)
 bones/0/rotation = Quaternion(0.772549, 0.107691, -0.136221, 0.610749)
 bones/1/position = Vector3(-0.109875, 0.0989111, -0.0510765)
 bones/1/rotation = Quaternion(0.679368, -0.310085, 0.392234, 0.537083)
-bones/2/position = Vector3(0, 0.370383, 0)
-bones/2/rotation = Quaternion(0.0697543, -0.00800648, 0.000559868, 0.997532)
-bones/3/rotation = Quaternion(1, -1.10194e-10, -7.54902e-08, -3.90712e-09)
-bones/4/rotation = Quaternion(-0.302697, -0.17741, -0.0276799, 0.93602)
-bones/5/rotation = Quaternion(0.0760416, 1.11452e-06, -2.59527e-06, 0.997105)
-bones/6/rotation = Quaternion(-0.163942, 0.53095, 0.151611, 0.817453)
-bones/7/rotation = Quaternion(0.348813, -1.08202e-06, 1.19222e-05, 0.937193)
-bones/8/rotation = Quaternion(-0.604809, -0.289286, -0.698398, 0.250519)
+bones/2/position = Vector3(0, 0.350314, 0)
+bones/2/rotation = Quaternion(0.0697541, 0.00833169, -0.000582609, 0.997529)
+bones/3/rotation = Quaternion(1, -1.3327e-11, -7.56037e-08, -5.44599e-09)
+bones/4/rotation = Quaternion(-0.497606, -0.15206, -0.0566643, 0.852089)
+bones/5/rotation = Quaternion(0.395214, 1.0473e-06, -1.3488e-05, 0.918589)
+bones/6/rotation = Quaternion(-0.237814, 0.528835, 0.229576, 0.781712)
+bones/7/rotation = Quaternion(0.527341, -9.71155e-07, 1.80317e-05, 0.849654)
+bones/8/rotation = Quaternion(-0.706815, -0.246437, -0.594951, 0.292772)
 bones/9/rotation = Quaternion(2.16937e-07, 5.35541e-07, -0.395029, 0.918669)
 bones/10/rotation = Quaternion(-0.289732, -0.637458, -0.217438, 0.680017)
 bones/11/rotation = Quaternion(0.487906, -0.0174399, 0.00854542, 0.87268)
@@ -2123,7 +2124,7 @@ bones/12/rotation = Quaternion(-0.371224, -0.00197697, 0.00585366, 0.928523)
 bones/13/rotation = Quaternion(-0.502333, 1.50049e-05, -2.85054e-05, 0.864674)
 bones/14/rotation = Quaternion(-0.371224, -0.00197698, 0.00585369, 0.928523)
 bones/15/rotation = Quaternion(-0.502333, 1.49999e-05, -2.85068e-05, 0.864674)
-bones/16/rotation = Quaternion(-0.707117, 0.246288, 0.594592, 0.292897)
+bones/16/rotation = Quaternion(-0.605164, 0.289158, 0.69809, 0.250667)
 bones/17/rotation = Quaternion(2.27203e-07, -5.84749e-07, 0.395029, 0.918669)
 bones/18/rotation = Quaternion(-0.289732, 0.637458, 0.217438, 0.680017)
 bones/19/rotation = Quaternion(0.487906, 0.0174399, -0.00854541, 0.87268)
@@ -2160,10 +2161,6 @@ autostart = true
 [node name="AnimationTree" type="AnimationTree" parent="."]
 unique_name_in_owner = true
 root_node = NodePath("%AnimationTree/../gobot")
-libraries = {
-"": SubResource("AnimationLibrary_03he3"),
-"custom_lib": ExtResource("6_vjupt")
-}
 tree_root = SubResource("AnimationNodeBlendTree_8xvna")
 anim_player = NodePath("../gobot/AnimationPlayer")
 parameters/FlipShot/active = false
