@@ -1,5 +1,5 @@
 extends Node
-
+ 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -207,6 +207,9 @@ func addMonster(Name):
 		if databaseMonsters[i]["Name"] == Name:
 			var tempDic = databaseMonsters[i].duplicate(true)
 			selectedMonsters[selectedMonsters.size()] = tempDic
+
+
+
 
 
 #func addEXP(amount):

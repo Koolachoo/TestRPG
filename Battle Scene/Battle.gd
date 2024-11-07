@@ -5,6 +5,7 @@ extends Node3D
 @onready var enemani = $Enemy/AnimationPlayer
 var cat = preload("res://MonsterParty/monster_cat.tscn")
 var fish = preload("res://MonsterParty/monster_fish.tscn")
+var boar = preload("res://MonsterParty/monster_boar.tscn")
 var selected = 5
 var enselected = 6
 # Called when the node enters the scene tree for the first time.
@@ -12,6 +13,18 @@ func _ready():
 	#set_enemy()
 	main_buttons_ready()
 	
+	
+	
+
+func get_demon():
+	for i in Game.selectedMonsters:
+		var monTemp = Game.selectedMonsters[i]["Scene"].instantiate
+		monTemp.name = Game.selectedMonsters[i]["Name"]
+		monTemp.hide()
+		#$Player.add_child(monTemp)
+
+#this is the previously used DokiMon code
+func call_mons():
 	for i in Game.selectedMonsters:
 		var monTemp = Game.selectedMonsters[i]["Scene"].instantiate()
 		monTemp.name = Game.selectedMonsters[i]["Name"]
@@ -27,14 +40,7 @@ func _ready():
 	playani.play("grow")
 	enemani.play("grow")
 	#set_player()
-	
 
-func get_demon():
-	for i in Game.selectedMonsters:
-		var monTemp = Game.selectedMonsters[i]["Scene"].instantiate
-		monTemp.name = Game.selectedMonsters[i]["Name"]
-		monTemp.hide()
-		#$Player.add_child(monTemp)
 		
 func set_player():
 	var playtemp = cat.instantiate()

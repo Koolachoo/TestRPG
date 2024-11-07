@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyffjqvf3ymyf"]
+
+[sub_resource type="GDScript" id="GDScript_xq2td"]
+script/source = "extends Node
+#var File = preload(\"res://data/textData/mondata.json\")
+
+# Called when the node enters the scene tree for the first time.
+# Function to load and display monster data
+func _ready():
+	var monster_data = load_monster_data()  # Call your function
+	
+	if monster_data.size() > 0:  # Check if data was loaded
+		var monsters = monster_data.get(\"monsters\", [])
+		
+		if monsters.size() > 0:
+			var first_monster = monsters[0]  # Get the first monster as an example
+			var monster_name = first_monster.get(\"name\", \"Unknown\")
+			var monster_type = first_monster.get(\"type\", \"Unknown\")
+			
+			# Safely get the Label node and set the text
+			var label = $Info  # Make sure this points to the correct label
+			if label:  # Check if the label node exists
+				label.text = \"Monster: \" + monster_name + \" (\" + monster_type + \")\"
+			else:
+				print(\"Label node not found!\")
+	else:
+		print(\"No monster data found or failed to load!\")
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func load_monster_data() -> Dictionary:
+	var file = FileAccess.open(\"res://data/monsters.json\", FileAccess.READ)  # Open the file in read mode
+	if file:  # Check if the file was opened successfully
+		var content = file.get_as_text()  # Get the file content as text
+		file.close()  # Always close the file after reading
+		
+		var result = JSON.parse_string(content)  # Parse the JSON content
+		
+		if result != null:  # Check if parsing was successful
+			return result  # Return the parsed data (result contains a Dictionary or Array)
+		else:
+			print(\"Failed to parse JSON\")
+	return {}  # Return an empty dictionary if file doesn't exist or parsing fails
+"
+
+[node name="DataTest" type="Node"]
+script = SubResource("GDScript_xq2td")
+
+[node name="Info" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
