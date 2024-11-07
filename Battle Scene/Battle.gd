@@ -10,7 +10,7 @@ var selected = 5
 var enselected = 6
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#set_enemy()
+	set_enemy()
 	main_buttons_ready()
 	
 	

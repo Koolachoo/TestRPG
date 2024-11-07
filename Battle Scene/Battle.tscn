@@ -125,7 +125,6 @@ size = Vector3(14, 1, 16)
 
 [node name="PartySpawner" parent="." instance=ExtResource("1_4uqmk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99208, 1.48894, -6.53906)
-mob_scene = ExtResource("2_gw6y8")
 
 [node name="monster_cat" parent="." instance=ExtResource("2_gw6y8")]
 transform = Transform3D(0.464007, 0, 0.885831, 0, 1, 0, -0.885831, 0, 0.464007, -11.7888, 0.694715, -5.41601)
