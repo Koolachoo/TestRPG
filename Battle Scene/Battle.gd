@@ -3,15 +3,24 @@ extends Node3D
 
 @onready var playani = $Player/AnimationPlayer
 @onready var enemani = $Enemy/AnimationPlayer
+@onready var playHP = $UI/HPtxt
 var cat = preload("res://MonsterParty/monster_cat.tscn")
 var fish = preload("res://MonsterParty/monster_fish.tscn")
-var boar = preload("res://MonsterParty/monster_boar.tscn")
+var playerUnit = preload("res://Battle Scene/playerunit.tscn")
 var selected = 5
 var enselected = 6
+
+var player_monster
+var enemy_monster
+var is_player_turn = true
+var battle_over = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_tree().debugger_request_scene_tree()
+	set_player()
 	set_enemy()
 	main_buttons_ready()
+	#start_battle()
 	
 	
 	
@@ -22,6 +31,9 @@ func get_demon():
 		monTemp.name = Game.selectedMonsters[i]["Name"]
 		monTemp.hide()
 		#$Player.add_child(monTemp)
+
+
+
 
 #this is the previously used DokiMon code
 func call_mons():
@@ -43,10 +55,17 @@ func call_mons():
 
 		
 func set_player():
-	var playtemp = cat.instantiate()
+	var playtemp = playerUnit.instantiate()
+
+	# Load the monster data from the .tres file
+	var monster_data = load("res://data/demons/boar.tres")
+	# Extract the texture from the loaded .tres file
+	if monster_data.front != null:
+		playtemp.set_texture(monster_data.front)
+	else:
+		print("Texture not found in the monster data!")
 	$Player.add_child(playtemp)
 	playani.play("grow")
-	
 
 func set_enemy():
 	var monTemp = fish.instantiate()
@@ -98,8 +117,6 @@ func _process(delta):
 	
 
 
-
-
 func _on_switch_pressed():
 	$UI/MarginContainer/FightMenu.visible = false
 	$UI/MarginContainer/Switch.visible = true
@@ -107,3 +124,69 @@ func _on_switch_pressed():
 func _on_capture_pressed():
 	$UI/MarginContainer/FightMenu.visible = false
 	
+
+# gpt logic from here on, for the battle
+# Battle logic is going on here
+# Start the battle loop
+func start_battle():
+	print("Battle start!")
+	is_player_turn = true
+	battle_loop()
+
+# The main battle loop
+func battle_loop():
+	if battle_over:
+		return
+
+	if is_player_turn:
+		print("Player's turn")
+		player_turn()
+	else:
+		print("Enemy's turn")
+		enemy_turn()
+
+# Player's turn
+func player_turn():
+	# Example: Player chooses a move; here we'll just simulate damage for simplicity
+	var damage = 20  # Placeholder damage value for player move
+	print("Player attacks for ", damage, " damage!")
+	apply_damage(cat, damage)
+	
+	# Check if enemy is defeated
+	if check_defeat(fish):
+		end_battle("Player wins!")
+		return
+	
+	# Switch to enemy's turn
+	is_player_turn = false
+	battle_loop()
+
+# Enemy's turn
+func enemy_turn():
+	# Example: Enemy chooses a move; here we'll just simulate damage for simplicity
+	var damage = 15  # Placeholder damage value for enemy move
+	print("Enemy attacks for ", damage, " damage!")
+	apply_damage(cat, damage)
+	
+	# Check if player is defeated
+	if check_defeat(fish):
+		end_battle("Enemy wins!")
+		return
+	
+	# Switch back to player's turn
+	is_player_turn = true
+	battle_loop()
+
+# Apply damage to a monster
+func apply_damage(monster_node, damage):
+	cat.hp -= damage  # Assuming each monster has a health property
+	print(monster_node.name, " now has ", monster_node.health, " HP")
+
+# Check if a monster is defeated
+func check_defeat(monster_node) -> bool:
+	return monster_node.health <= 0
+
+# End the battle
+func end_battle(result_message):
+	battle_over = true
+	print(result_message)

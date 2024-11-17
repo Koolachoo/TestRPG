@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://djlfkx4akxpwu"]
+
+[ext_resource type="Script" path="res://Battle Scene/playerunit.gd" id="1_nwx2l"]
+
+[node name="Playerunit" type="Node3D"]
+script = ExtResource("1_nwx2l")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]

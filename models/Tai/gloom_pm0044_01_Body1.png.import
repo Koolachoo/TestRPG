@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1qoktexj7nv"
+uid="uid://vdwk1i8hm8ae"
 path.s3tc="res://.godot/imported/gloom_pm0044_01_Body1.png-a492df17d846e92f47d4b136fb8c04cb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

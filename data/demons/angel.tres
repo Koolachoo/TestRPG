@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dv6d2fflhs3l5"]
+
+[ext_resource type="Script" path="res://data/demons/category.gd" id="1_cov3v"]
+[ext_resource type="Texture2D" uid="uid://cmmqpwgdhspw" path="res://sprites/mons/angel.png" id="1_koobl"]
+
+[resource]
+script = ExtResource("1_cov3v")
+front = ExtResource("1_koobl")
+HP = 10
+MP = 10
+Muscle = 10
+Mind = 10
+Guard = 10
+Aura = 10
+Agility = 10

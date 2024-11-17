@@ -297,7 +297,7 @@ offset_top = 264.0
 offset_right = -572.0
 offset_bottom = 287.0
 theme_override_font_sizes/font_size = 30
-text = "10/10"
+text = "100"
 
 [node name="Action" type="Label" parent="UI"]
 layout_mode = 0
@@ -359,7 +359,7 @@ offset_top = 50.0
 offset_right = 634.0
 offset_bottom = 92.0
 theme_override_font_sizes/font_size = 30
-text = "10/10"
+text = "100"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_cspj7")
