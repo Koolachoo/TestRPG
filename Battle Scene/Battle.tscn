@@ -371,5 +371,6 @@ environment = SubResource("Environment_s0aaw")
 [connection signal="pressed" from="UI/MarginContainer/FightMenu/Switch" to="." method="_on_switch_pressed"]
 [connection signal="pressed" from="UI/MarginContainer/FightMenu/Capture" to="." method="_on_capture_pressed"]
 [connection signal="pressed" from="UI/MarginContainer/FightMenu/Run" to="UI" method="_on_run_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/Moves/Move 1" to="." method="_on_move_1_pressed"]
 [connection signal="pressed" from="UI/MarginContainer/Moves/Cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="UI/MarginContainer/Switch/Cancel" to="." method="_on_cancel_pressed"]

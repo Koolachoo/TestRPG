@@ -10,14 +10,16 @@ var playerUnit = preload("res://Battle Scene/playerunit.tscn")
 var selected = 5
 var enselected = 6
 
+var yourHP = 100
 var player_monster
 var enemy_monster
 var is_player_turn = true
 var battle_over = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_tree().debugger_request_scene_tree()
-	set_player()
+	#get_tree().debugger_request_scene_tree()
+	#set_player()
+	set_cat()
 	set_enemy()
 	main_buttons_ready()
 	#start_battle()
@@ -66,6 +68,12 @@ func set_player():
 		print("Texture not found in the monster data!")
 	$Player.add_child(playtemp)
 	playani.play("grow")
+
+func set_cat():
+	var catTemp = cat.instantiate()
+	$Player.add_child(catTemp)
+	playani.play("grow")
+
 
 func set_enemy():
 	var monTemp = fish.instantiate()
@@ -147,10 +155,12 @@ func battle_loop():
 
 # Player's turn
 func player_turn():
+	var damage = 20 
 	# Example: Player chooses a move; here we'll just simulate damage for simplicity
-	var damage = 20  # Placeholder damage value for player move
-	print("Player attacks for ", damage, " damage!")
-	apply_damage(cat, damage)
+	if _on_move_1_pressed():
+		print("Player attacks for ", damage, " damage!")
+		apply_damage(damage)
+	
 	
 	# Check if enemy is defeated
 	if check_defeat(fish):
@@ -166,10 +176,10 @@ func enemy_turn():
 	# Example: Enemy chooses a move; here we'll just simulate damage for simplicity
 	var damage = 15  # Placeholder damage value for enemy move
 	print("Enemy attacks for ", damage, " damage!")
-	apply_damage(cat, damage)
+	apply_damage(damage)
 	
 	# Check if player is defeated
-	if check_defeat(fish):
+	if check_defeat(cat):
 		end_battle("Enemy wins!")
 		return
 	
@@ -178,15 +188,26 @@ func enemy_turn():
 	battle_loop()
 
 # Apply damage to a monster
-func apply_damage(monster_node, damage):
-	cat.hp -= damage  # Assuming each monster has a health property
-	print(monster_node.name, " now has ", monster_node.health, " HP")
+func apply_damage(damage: int):
+	yourHP -= damage
+	if yourHP < 0:
+		yourHP = 0  # Prevent yourHP from going below zero
+
+	# Update the yourHP label in the UI
+	if playHP != null:
+		playHP.text = str(yourHP)
+	else:
+		print("Health label not found!")
 
 # Check if a monster is defeated
 func check_defeat(monster_node) -> bool:
-	return monster_node.health <= 0
+	return yourHP <= 0
 
 # End the battle
 func end_battle(result_message):
 	battle_over = true
 	print(result_message)
+
+
+func _on_move_1_pressed():
+	print("rawr")
