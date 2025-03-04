@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://du5gu6pd0yx6v"]
+
+[ext_resource type="PackedScene" uid="uid://bhc47r1vovvfl" path="res://models/test import/Hex/Hex.glb" id="1_nu48g"]
+
+[node name="Hex" instance=ExtResource("1_nu48g")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/14/rotation = Quaternion(0.000474975, 0.000474975, -0.474525, 1.00048)
+bones/24/rotation = Quaternion(0.000474975, 0.000474975, 0.570475, 1.00048)

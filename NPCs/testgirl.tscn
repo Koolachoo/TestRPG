@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://caskupdqvvp0p"]
+
+[ext_resource type="PackedScene" uid="uid://bp0rkr2hqyer6" path="res://NPCs/girl.tscn" id="1_1ytq8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2vqwc"]
+size = Vector3(0.892761, 2.28613, 1)
+
+[node name="Testgirl" type="CharacterBody3D"]
+
+[node name="girl" parent="." instance=ExtResource("1_1ytq8")]
+transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.777725, 0, 0, 0, 0.777725, 0, 0, 0, 0.777725, 0.00168511, 0.896848, 0)
+shape = SubResource("BoxShape3D_2vqwc")

@@ -1,0 +1,11 @@
+~ start
+Helena: [[Hi|Hello|Howdy]], this is some dialogue.
+Helena: Would you like some milk?
+- First Choice: Absolutely!
+	set milk_status = "has"
+- Second Choice: No, thank you.
+	=> END
+- Start again => start
+- End the conversation => END
+Helena: For more information see the online documentation.
+=> END

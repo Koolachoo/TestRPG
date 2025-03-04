@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cfsrhtjrmsiup"]
+[gd_scene load_steps=18 format=3 uid="uid://cfsrhtjrmsiup"]
 
 [ext_resource type="PackedScene" uid="uid://bqtlgqmf1ohdb" path="res://Player/sophia.tscn" id="1_kl028"]
 [ext_resource type="Script" path="res://main.gd" id="1_toln1"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://d34iwtcg2jxfw" path="res://Menus/pause.tscn" id="6_ticir"]
 [ext_resource type="PackedScene" uid="uid://8iou4os6r3xy" path="res://MonsterParty/monster_cat.tscn" id="8_o1qhd"]
 [ext_resource type="AudioStream" uid="uid://blrn8yipbu243" path="res://Music/49_The Wavering Forest.mp3" id="9_0607v"]
+[ext_resource type="PackedScene" uid="uid://caskupdqvvp0p" path="res://NPCs/testgirl.tscn" id="12_vbc5d"]
+[ext_resource type="PackedScene" uid="uid://bgcijbs075gh7" path="res://Props/gate.tscn" id="13_nt635"]
+[ext_resource type="PackedScene" uid="uid://dqd47tpk7upab" path="res://NPCs/milk.tscn" id="14_l7d8m"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_c66mp"]
 panorama = ExtResource("2_dysqt")
@@ -62,5 +65,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85518, -1.15638, 3.06711)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_0607v")
+
+[node name="Testgirl" parent="." instance=ExtResource("12_vbc5d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47989, -1.1635, 0.119939)
+
+[node name="Gate" parent="." instance=ExtResource("13_nt635")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.254, -1.15985, -3.94724)
+
+[node name="Milk" parent="." instance=ExtResource("14_l7d8m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5479, -1.17556, 5.65515)
 
 [connection signal="body_entered" from="BattleSpawn" to="." method="_on_battle_spawn_body_entered"]

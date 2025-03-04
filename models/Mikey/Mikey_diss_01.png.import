@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk1fde6nejbje"
+uid="uid://cspljvogr01he"
 path.s3tc="res://.godot/imported/Mikey_diss_01.png-37ca74f3900b10b921df7a918aa9cb0a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

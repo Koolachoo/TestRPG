@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://1rkllrgi7y4d"]
+
+[ext_resource type="PackedScene" uid="uid://dgjqh0xq0c5n2" path="res://models/test import/gate/t01_bm_door.dae" id="1_rbwgf"]
+
+[sub_resource type="Animation" id="Animation_5sou0"]
+resource_name = "open"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/vsn_mesh_0_door1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m4sp0"]
+_data = {
+"open": SubResource("Animation_5sou0")
+}
+
+[node name="t01_bm_door" instance=ExtResource("1_rbwgf")]
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_m4sp0")
+}

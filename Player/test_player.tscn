@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://5qdkva8oflvk"]
+[gd_scene load_steps=18 format=3 uid="uid://5qdkva8oflvk"]
 
 [ext_resource type="Script" path="res://Player/test_player.gd" id="1_85jw8"]
 [ext_resource type="Texture2D" uid="uid://c6fhir2t3h80n" path="res://sprites/test_player/front/front 1.png" id="1_m0wbx"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d3gkychwdjbgw" path="res://sprites/test_player/right/right 1.png" id="7_1g4u7"]
 [ext_resource type="Texture2D" uid="uid://c0xtme888kq1b" path="res://sprites/test_player/right/right 2.png" id="8_trwxd"]
 [ext_resource type="Texture2D" uid="uid://cgpfxa2qpnplx" path="res://sprites/test_player/right/right 3.png" id="9_33sk1"]
+[ext_resource type="Script" path="res://systems/interaction/Interactor.gd" id="14_w7b6d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_11n85"]
 animations = [{
@@ -89,6 +90,9 @@ animations = [{
 radius = 0.883984
 height = 3.59561
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2p5gs"]
+size = Vector3(1, 1, 4.43475)
+
 [node name="test player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.80196, 0)
 script = ExtResource("1_85jw8")
@@ -105,3 +109,10 @@ shape = SubResource("CapsuleShape3D_sgaxl")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.8461, 0.533024, 0, -0.533024, 0.8461, 0.234137, 4.4408, 7.27511)
+
+[node name="Interactor" type="Area3D" parent="."]
+script = ExtResource("14_w7b6d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.71738)
+shape = SubResource("BoxShape3D_2p5gs")

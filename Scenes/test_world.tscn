@@ -1,11 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://7i5yfo6dpo6j"]
+[gd_scene load_steps=7 format=3 uid="uid://7i5yfo6dpo6j"]
 
+[ext_resource type="Texture2D" uid="uid://djwr6o3b175bl" path="res://Textures/autumn_field_puresky.jpg" id="1_a0p3p"]
 [ext_resource type="PackedScene" uid="uid://2jrh5cwuqksb" path="res://Scenes/ground.tscn" id="2_qxlkr"]
 [ext_resource type="PackedScene" uid="uid://5qdkva8oflvk" path="res://Player/test_player.tscn" id="2_tqarw"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5p7n3"]
+panorama = ExtResource("1_a0p3p")
+
+[sub_resource type="Sky" id="Sky_mh58o"]
+sky_material = SubResource("PanoramaSkyMaterial_5p7n3")
+
+[sub_resource type="Environment" id="Environment_okiwv"]
+background_mode = 2
+sky = SubResource("Sky_mh58o")
 
 [node name="test world" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_okiwv")
 
 [node name="test player" parent="." instance=ExtResource("2_tqarw")]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, -0.814999, -3.58684)
