@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cp5wbov8oxmad"]
 
 [ext_resource type="Texture2D" uid="uid://dc7e0w184odo7" path="res://sprites/mons/boar.png" id="1_bhwvt"]
-[ext_resource type="Script" path="res://MonsterParty/monster_boar.gd" id="1_bs88f"]
+[ext_resource type="Script" uid="uid://c37o7buw7rkfg" path="res://MonsterParty/monster_boar.gd" id="1_bs88f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2da3h"]
 radius = 0.294668

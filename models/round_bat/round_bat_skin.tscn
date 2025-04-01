@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://tyjgdu65yj3m"]
 
 [ext_resource type="PackedScene" uid="uid://h2we7rb772hy" path="res://models/round_bat/model/bat.glb" id="1_tt0gg"]
-[ext_resource type="Script" path="res://models/round_bat/round_bat_skin.gd" id="1_vbemd"]
+[ext_resource type="Script" uid="uid://40j7fdtg5tfo" path="res://models/round_bat/round_bat_skin.gd" id="1_vbemd"]
 [ext_resource type="AnimationLibrary" uid="uid://c1irgai81674w" path="res://models/round_bat/model/custom/custom_lib.res" id="2_er7fn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0xry"]
@@ -137,8 +137,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sqho5"]
 _data = {
-"Idle": SubResource("Animation_tk2r3"),
-"RESET": SubResource("Animation_rjhsk")
+&"Idle": SubResource("Animation_tk2r3"),
+&"RESET": SubResource("Animation_rjhsk")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_448ki"]
@@ -159,7 +159,7 @@ nodes/HurtShot/position = Vector2(60, 140)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_v8u50")
 nodes/Idle/position = Vector2(-160, 160)
 nodes/output/position = Vector2(280, 160)
-node_connections = [&"output", 0, &"HurtShot", &"HurtShot", 0, &"Idle", &"HurtShot", 1, &"Hurt"]
+node_connections = [&"HurtShot", 0, &"Idle", &"HurtShot", 1, &"Hurt", &"output", 0, &"HurtShot"]
 
 [node name="RoundBatSkin" type="Node3D"]
 script = ExtResource("1_vbemd")

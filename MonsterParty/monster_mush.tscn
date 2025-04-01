@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://k5p885y0hexr"]
 
 [ext_resource type="PackedScene" uid="uid://d2eghb633adqi" path="res://models/Monsters/Mush/Mushnub.gltf" id="1_svlyd"]
-[ext_resource type="Script" path="res://MonsterParty/monster_mush.gd" id="1_x8snx"]
+[ext_resource type="Script" uid="uid://cl7egbecj5xr8" path="res://MonsterParty/monster_mush.gd" id="1_x8snx"]
 
 [node name="monster_mush" type="Node3D"]
 script = ExtResource("1_x8snx")

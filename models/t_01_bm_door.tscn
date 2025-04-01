@@ -14,7 +14,7 @@ tracks/0/keys = PackedFloat32Array()
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m4sp0"]
 _data = {
-"open": SubResource("Animation_5sou0")
+&"open": SubResource("Animation_5sou0")
 }
 
 [node name="t01_bm_door" instance=ExtResource("1_rbwgf")]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://diibmlqy1mpqb"]
 
-[ext_resource type="Script" path="res://addons/cyclops_level_builder/controls/numeric_line_edit.gd" id="1_u8bpo"]
+[ext_resource type="Script" uid="uid://66yb1mushqoj" path="res://addons/cyclops_level_builder/controls/numeric_line_edit.gd" id="1_u8bpo"]
 
 [node name="PanelContainer" type="PanelContainer"]
 offset_right = 476.0

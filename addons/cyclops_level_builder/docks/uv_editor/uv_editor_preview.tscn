@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbfgpupliiqnm"]
 
-[ext_resource type="Script" path="res://addons/cyclops_level_builder/docks/uv_editor/uv_editor_preview.gd" id="1_57x0n"]
+[ext_resource type="Script" uid="uid://cafn8xevk4io8" path="res://addons/cyclops_level_builder/docks/uv_editor/uv_editor_preview.gd" id="1_57x0n"]
 [ext_resource type="Material" uid="uid://rdhrhgrb78ls" path="res://addons/cyclops_level_builder/materials/grid.tres" id="2_kxmas"]
 [ext_resource type="PackedScene" path="res://addons/cyclops_level_builder/docks/uv_editor/uv_editor_preview_studio.tscn" id="3_7qfos"]
 

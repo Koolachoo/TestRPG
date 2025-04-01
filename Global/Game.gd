@@ -1,5 +1,9 @@
 extends Node
- 
+
+var player_hp = 100
+var player_attack = 15
+var player_defense = 8
+var player_speed = 12 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=3 uid="uid://bpjqcswabdtyb"]
 
-[ext_resource type="Script" path="res://models/beetle_bot/beetlebot_skin.gd" id="1_gujli"]
+[ext_resource type="Script" uid="uid://dvv2i3476mjo" path="res://models/beetle_bot/beetlebot_skin.gd" id="1_gujli"]
 [ext_resource type="PackedScene" uid="uid://dbqoj8oam1dsg" path="res://models/beetle_bot/model/beetle_bot_fused.glb" id="1_r7amh"]
 [ext_resource type="Material" uid="uid://dg5h8p8fu3mhh" path="res://models/beetle_bot/materials/beetlebot_eyes_mat.tres" id="3_nbf2s"]
 [ext_resource type="Material" uid="uid://h2e57pyy6lu4" path="res://models/beetle_bot/materials/beetlebot_lights_mat.tres" id="4_4158y"]
@@ -388,6 +388,33 @@ tracks/53/path = NodePath("Armature/Skeleton3D:head")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_j0ypl"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D/Beetle:surface_material_override/1:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.25]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D/Beetle:surface_material_override/2:emission_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.25]
+}
 
 [sub_resource type="Animation" id="Animation_28veb"]
 resource_name = "headbutt"
@@ -1919,41 +1946,14 @@ tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/keys = PackedFloat32Array(0, 1, 1, 1, 1)
 
-[sub_resource type="Animation" id="Animation_j0ypl"]
-resource_name = "RESET"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Armature/Skeleton3D/Beetle:surface_material_override/1:shader_parameter/intensity")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.25]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Armature/Skeleton3D/Beetle:surface_material_override/2:emission_energy_multiplier")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.25]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w6t5q"]
 _data = {
-"Bob": SubResource("Animation_bret7"),
-"RESET": SubResource("Animation_j0ypl"),
-"headbutt": SubResource("Animation_28veb"),
-"idle": SubResource("Animation_t1ls0"),
-"poweroff": SubResource("Animation_wdoh2"),
-"walk": SubResource("Animation_gd1qa")
+&"Bob": SubResource("Animation_bret7"),
+&"RESET": SubResource("Animation_j0ypl"),
+&"headbutt": SubResource("Animation_28veb"),
+&"idle": SubResource("Animation_t1ls0"),
+&"poweroff": SubResource("Animation_wdoh2"),
+&"walk": SubResource("Animation_gd1qa")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tvll1"]
@@ -1979,7 +1979,7 @@ nodes/Animation/position = Vector2(-200, 0)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_1kno4")
 "nodes/Animation 2/position" = Vector2(-200, 100)
 nodes/output/position = Vector2(360, 0)
-node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"Animation", &"Add2", 1, &"Animation 2"]
+node_connections = [&"Add2", 0, &"Animation", &"Add2", 1, &"Animation 2", &"output", 0, &"Add2"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x5pkv"]
 animation = &"idle"

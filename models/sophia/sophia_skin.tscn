@@ -1,7 +1,7 @@
 [gd_scene load_steps=47 format=3 uid="uid://prh35jb6tjtd"]
 
 [ext_resource type="PackedScene" uid="uid://16iu10wxub40" path="res://models/sophia/model/sophia.glb" id="1_e4pev"]
-[ext_resource type="Script" path="res://models/sophia/sophia_skin.gd" id="1_obcib"]
+[ext_resource type="Script" uid="uid://drsohon7yevir" path="res://models/sophia/sophia_skin.gd" id="1_obcib"]
 [ext_resource type="Material" uid="uid://dye01l0ct4fby" path="res://models/sophia/model/materials/eye_mat_override.tres" id="4_mms51"]
 
 [sub_resource type="Animation" id="Animation_02snk"]
@@ -5868,14 +5868,14 @@ tracks/103/keys = PackedFloat32Array(0, 1, -0.0898415, -0.760331, -0.524915, 0.3
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qvx6u"]
 _data = {
-"EdgeGrab": SubResource("Animation_02snk"),
-"Fall": SubResource("Animation_apdna"),
-"Idle": SubResource("Animation_xdh4m"),
-"Jump": SubResource("Animation_3wd7h"),
-"Run": SubResource("Animation_cte3y"),
-"RunTiltL": SubResource("Animation_kidd7"),
-"RunTiltR": SubResource("Animation_1157w"),
-"WallSlide": SubResource("Animation_w14hg")
+&"EdgeGrab": SubResource("Animation_02snk"),
+&"Fall": SubResource("Animation_apdna"),
+&"Idle": SubResource("Animation_xdh4m"),
+&"Jump": SubResource("Animation_3wd7h"),
+&"Run": SubResource("Animation_cte3y"),
+&"RunTiltL": SubResource("Animation_kidd7"),
+&"RunTiltR": SubResource("Animation_1157w"),
+&"WallSlide": SubResource("Animation_w14hg")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vapre"]

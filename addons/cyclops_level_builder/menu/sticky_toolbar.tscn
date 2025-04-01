@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c4smddvlwx54s"]
 
-[ext_resource type="Script" path="res://addons/cyclops_level_builder/menu/sticky_toolbar.gd" id="1_52wtc"]
+[ext_resource type="Script" uid="uid://bupvqhqj31fda" path="res://addons/cyclops_level_builder/menu/sticky_toolbar.gd" id="1_52wtc"]
 [ext_resource type="Texture2D" uid="uid://d0krdms4l6ns4" path="res://addons/cyclops_level_builder/art/cyclops_3.png" id="2_0mx5n"]
 [ext_resource type="Texture2D" uid="uid://cg3yjatinkymb" path="res://addons/cyclops_level_builder/art/cyclops_4.png" id="3_5oy58"]
 

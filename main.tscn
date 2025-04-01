@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://cfsrhtjrmsiup"]
 
 [ext_resource type="PackedScene" uid="uid://bqtlgqmf1ohdb" path="res://Player/sophia.tscn" id="1_kl028"]
-[ext_resource type="Script" path="res://main.gd" id="1_toln1"]
+[ext_resource type="Script" uid="uid://xgfjbsg8x5cl" path="res://main.gd" id="1_toln1"]
 [ext_resource type="PackedScene" uid="uid://da51n7rcs6fq8" path="res://NPCs/npc.tscn" id="2_clsbd"]
 [ext_resource type="Texture2D" uid="uid://djwr6o3b175bl" path="res://Textures/autumn_field_puresky.jpg" id="2_dysqt"]
 [ext_resource type="PackedScene" uid="uid://2jrh5cwuqksb" path="res://Scenes/ground.tscn" id="3_4j7il"]

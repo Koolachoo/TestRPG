@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://da51n7rcs6fq8"]
 
 [ext_resource type="PackedScene" uid="uid://cy36aygvs66pn" path="res://models/gobot/gobot_skin.tscn" id="1_0475b"]
-[ext_resource type="Script" path="res://NPCs/npc.gd" id="1_ptecd"]
+[ext_resource type="Script" uid="uid://3l1do2pewfi5" path="res://NPCs/npc.gd" id="1_ptecd"]
 [ext_resource type="Resource" uid="uid://c2aq4e8y1lf1k" path="res://Dialogue/main.dialogue" id="2_ylrfj"]
 [ext_resource type="PackedScene" uid="uid://y2d8i5548a4h" path="res://systems/interaction/Interactable.tscn" id="3_o5lvj"]
 

@@ -1,4 +1,5 @@
 extends Control
+@onready var main = preload("res://main.tscn")
 
 func _ready():
 	$MarginContainer/VBoxContainer/VBoxContainer2/Quit.grab_focus()

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=5 format=3 uid="uid://c44fegi530v8"]
 
-[ext_resource type="Script" path="res://data/demons/category.gd" id="1"]
+[ext_resource type="Script" uid="uid://c64r3wuwo0hvj" path="res://data/demons/category.gd" id="1"]
 [ext_resource type="Resource" uid="uid://clx7ioxpvktn1" path="res://data/moves/cliffcrusher.tres" id="1_1quq3"]
 [ext_resource type="Texture2D" uid="uid://dc7e0w184odo7" path="res://sprites/mons/boar.png" id="1_20l7g"]
 [ext_resource type="Resource" uid="uid://ecq1btm3jfii" path="res://data/types/wild.tres" id="2_t8evh"]

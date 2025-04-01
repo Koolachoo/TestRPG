@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqd47tpk7upab"]
 
-[ext_resource type="Script" path="res://NPCs/milk.gd" id="1_46n27"]
+[ext_resource type="Script" uid="uid://c6earack01eaa" path="res://NPCs/milk.gd" id="1_46n27"]
 [ext_resource type="PackedScene" uid="uid://du5gu6pd0yx6v" path="res://models/test import/Hex/hex.tscn" id="1_rqlog"]
 [ext_resource type="Resource" uid="uid://br4yi24ydd7xc" path="res://Dialogue/test.dialogue" id="2_fbun5"]
 [ext_resource type="PackedScene" uid="uid://y2d8i5548a4h" path="res://systems/interaction/Interactable.tscn" id="3_7phut"]

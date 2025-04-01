@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://qlskttl1wjr7"]
 
-[ext_resource type="Script" path="res://addons/EasyMenus/Scripts/options_menu_controller.gd" id="1_h6k46"]
-[ext_resource type="Script" path="res://addons/EasyMenus/Scripts/follow_focus_center.gd" id="2_l3n3h"]
-[ext_resource type="PackedScene" path="res://addons/EasyMenus/Nodes/slider_w_labels.tscn" id="3_xghjq"]
-[ext_resource type="Script" path="res://addons/EasyMenus/Scripts/option_button_input_propagator.gd" id="4_02jwa"]
-[ext_resource type="PackedScene" path="res://addons/EasyMenus/Nodes/gamepad_closable.tscn" id="5_k4nlh"]
+[ext_resource type="Script" uid="uid://ewd8k6cp0xik" path="res://addons/EasyMenus/Scripts/options_menu_controller.gd" id="1_h6k46"]
+[ext_resource type="Script" uid="uid://t8nji35qhlnk" path="res://addons/EasyMenus/Scripts/follow_focus_center.gd" id="2_l3n3h"]
+[ext_resource type="PackedScene" uid="uid://dyfwp0vhgfjd7" path="res://addons/EasyMenus/Nodes/slider_w_labels.tscn" id="3_xghjq"]
+[ext_resource type="Script" uid="uid://b8lgjlg00vpsc" path="res://addons/EasyMenus/Scripts/option_button_input_propagator.gd" id="4_02jwa"]
+[ext_resource type="PackedScene" uid="uid://cqniig2ks0xs2" path="res://addons/EasyMenus/Nodes/gamepad_closable.tscn" id="5_k4nlh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x77mt"]
 

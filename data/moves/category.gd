@@ -1,11 +1,10 @@
 extends Resource
 
+@export var type: Resource
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var base_power: int
+@export var accuracy: int = 100
+@export var power_points: int = 10
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func get_move_name()->String:
+	return resource_path.get_file().get_basename().capitalize()

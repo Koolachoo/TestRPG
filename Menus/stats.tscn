@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bux6bmt8ulc7e"]
+
+[ext_resource type="Script" uid="uid://c8euciem2o4ia" path="res://Menus/stats.gd" id="1_vojxv"]
+
+[node name="Stats" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vojxv")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Player Stats" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Player Stats"
+
+[node name="Back" type="Button" parent="Panel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

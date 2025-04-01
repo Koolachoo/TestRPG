@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://wmf2eu0uuhrg"]
 
-[ext_resource type="Script" path="res://addons/third-person-camera/third_person_camera/ThirdPersonCamera.gd" id="1_telmq"]
+[ext_resource type="Script" uid="uid://b6562ebkudpup" path="res://addons/third-person-camera/third_person_camera/ThirdPersonCamera.gd" id="1_telmq"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_84uqy"]
 margin = 1.135

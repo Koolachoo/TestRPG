@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://5qdkva8oflvk"]
 
-[ext_resource type="Script" path="res://Player/test_player.gd" id="1_85jw8"]
+[ext_resource type="Script" uid="uid://djvxok2ntcl6t" path="res://Player/test_player.gd" id="1_85jw8"]
 [ext_resource type="Texture2D" uid="uid://c6fhir2t3h80n" path="res://sprites/test_player/front/front 1.png" id="1_m0wbx"]
 [ext_resource type="Texture2D" uid="uid://caxms3gck81h2" path="res://sprites/test_player/Back/back 1.png" id="1_yvxou"]
 [ext_resource type="Texture2D" uid="uid://dbgy5nnmqm3xf" path="res://sprites/test_player/Back/back 2.png" id="2_jqv8r"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d3gkychwdjbgw" path="res://sprites/test_player/right/right 1.png" id="7_1g4u7"]
 [ext_resource type="Texture2D" uid="uid://c0xtme888kq1b" path="res://sprites/test_player/right/right 2.png" id="8_trwxd"]
 [ext_resource type="Texture2D" uid="uid://cgpfxa2qpnplx" path="res://sprites/test_player/right/right 3.png" id="9_33sk1"]
-[ext_resource type="Script" path="res://systems/interaction/Interactor.gd" id="14_w7b6d"]
+[ext_resource type="Script" uid="uid://csau8sjksus38" path="res://systems/interaction/Interactor.gd" id="14_w7b6d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_11n85"]
 animations = [{

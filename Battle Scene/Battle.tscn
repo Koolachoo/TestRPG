@@ -1,15 +1,15 @@
 [gd_scene load_steps=25 format=3 uid="uid://d0up2ut66iqsb"]
 
 [ext_resource type="PackedScene" uid="uid://8nvvg5nxnygn" path="res://Battle Scene/party_spawner.tscn" id="1_4uqmk"]
-[ext_resource type="Script" path="res://Battle Scene/Battle.gd" id="1_hy701"]
+[ext_resource type="Script" uid="uid://dt3ekyy0da16m" path="res://Battle Scene/Battle.gd" id="1_hy701"]
 [ext_resource type="PackedScene" uid="uid://8iou4os6r3xy" path="res://MonsterParty/monster_cat.tscn" id="2_gw6y8"]
 [ext_resource type="Texture2D" uid="uid://bu4jbcbfu8rue" path="res://Textures/pavement_textures/pavement_02_diff_4k.png" id="2_jq5hr"]
 [ext_resource type="PackedScene" uid="uid://kpb0ccfkk3xo" path="res://MonsterParty/monster_fish.tscn" id="3_k013x"]
 [ext_resource type="Texture2D" uid="uid://bfd4odfpdk3t8" path="res://Textures/pavement_textures/pavement_02_ao_4k.png" id="3_vnqbc"]
 [ext_resource type="Texture2D" uid="uid://co5qfu8d3yhfx" path="res://Textures/pavement_textures/pavement_02_nor_gl_4k.png" id="4_vjo5w"]
-[ext_resource type="Script" path="res://Battle Scene/UI.gd" id="5_3xu4t"]
+[ext_resource type="Script" uid="uid://c7ra24kvjydgb" path="res://Battle Scene/UI.gd" id="5_3xu4t"]
 [ext_resource type="Texture2D" uid="uid://bjjwwjof3dw2h" path="res://Textures/pavement_textures/pavement_02_rough_4k.png" id="5_17odw"]
-[ext_resource type="Script" path="res://Battle Scene/EnemyUI.gd" id="6_2bver"]
+[ext_resource type="Script" uid="uid://cabcfotkmu7v2" path="res://Battle Scene/EnemyUI.gd" id="6_2bver"]
 [ext_resource type="AudioStream" uid="uid://b1pca4vgd4k8l" path="res://Music/27. Wild Digimon Battle.mp3" id="7_cspj7"]
 [ext_resource type="Texture2D" uid="uid://djwr6o3b175bl" path="res://Textures/autumn_field_puresky.jpg" id="8_t8xtf"]
 
@@ -60,8 +60,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_luk3x"]
 _data = {
-"RESET": SubResource("Animation_uxvxa"),
-"grow": SubResource("Animation_mf0k3")
+&"RESET": SubResource("Animation_uxvxa"),
+&"grow": SubResource("Animation_mf0k3")
 }
 
 [sub_resource type="Animation" id="Animation_ofb3f"]
@@ -97,8 +97,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_an51o"]
 _data = {
-"RESET": SubResource("Animation_ofb3f"),
-"grow": SubResource("Animation_e3gf4")
+&"RESET": SubResource("Animation_ofb3f"),
+&"grow": SubResource("Animation_e3gf4")
 }
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4gdbm"]
@@ -313,7 +313,7 @@ transform = Transform3D(-4.76373, 0, -9.57548, 0, -10.695, 0, 9.57548, 0, -4.763
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 libraries = {
-"": SubResource("AnimationLibrary_luk3x")
+&"": SubResource("AnimationLibrary_luk3x")
 }
 
 [node name="Enemy" type="Node3D" parent="."]
@@ -321,7 +321,7 @@ transform = Transform3D(9.70937, 0, -4.4726, 0, -10.69, 0, 4.4726, 0, 9.70937, -
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
 libraries = {
-"": SubResource("AnimationLibrary_an51o")
+&"": SubResource("AnimationLibrary_an51o")
 }
 
 [node name="EnemyUI" type="Control" parent="."]

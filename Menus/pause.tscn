@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d34iwtcg2jxfw"]
 
-[ext_resource type="Script" path="res://Menus/pause.gd" id="1_wqa1d"]
+[ext_resource type="Script" uid="uid://bc67mqcpd235x" path="res://Menus/pause.gd" id="1_wqa1d"]
 
 [node name="Pause" type="Control"]
 layout_mode = 3
@@ -44,18 +44,44 @@ horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
+size_flags_vertical = 4
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Player")
 text = "Resume"
+
+[node name="Player" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Monster")
+text = "Player"
+
+[node name="Monster" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Player")
+focus_neighbor_bottom = NodePath("../Items")
+text = "Monsters"
+
+[node name="Items" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Monster")
+focus_neighbor_bottom = NodePath("../Options")
+text = "Items"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Items")
+focus_neighbor_bottom = NodePath("../Quit")
 text = "Options"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Options")
+focus_neighbor_bottom = NodePath("../Resume")
 text = "Quit
 "
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Monster" to="." method="_on_monster_pressed"]

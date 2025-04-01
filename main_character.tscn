@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bphf507vublwj"]
 
-[ext_resource type="Script" path="res://MainCharacter.gd" id="1_5y3fk"]
+[ext_resource type="Script" uid="uid://b377k7atksujg" path="res://MainCharacter.gd" id="1_5y3fk"]
 [ext_resource type="PackedScene" uid="uid://wh0bqbrvxoed" path="res://models/Mikey/mikey.tscn" id="2_8ca7p"]
 [ext_resource type="PackedScene" uid="uid://wmf2eu0uuhrg" path="res://addons/third-person-camera/third_person_camera/ThirdPersonCamera.tscn" id="3_ed4ii"]
 
