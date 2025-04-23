@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://xxkttsa1jre4" path="res://Player/ui.tscn" id="5_bd3ob"]
 [ext_resource type="PackedScene" uid="uid://d34iwtcg2jxfw" path="res://Menus/pause.tscn" id="6_ticir"]
 [ext_resource type="PackedScene" uid="uid://8iou4os6r3xy" path="res://MonsterParty/monster_cat.tscn" id="8_o1qhd"]
-[ext_resource type="AudioStream" uid="uid://blrn8yipbu243" path="res://Music/49_The Wavering Forest.mp3" id="9_0607v"]
+[ext_resource type="AudioStream" uid="uid://blrn8yipbu243" path="res://audio/Music/49_The Wavering Forest.mp3" id="9_0607v"]
 [ext_resource type="PackedScene" uid="uid://caskupdqvvp0p" path="res://NPCs/testgirl.tscn" id="12_vbc5d"]
 [ext_resource type="PackedScene" uid="uid://bgcijbs075gh7" path="res://Props/gate.tscn" id="13_nt635"]
 [ext_resource type="PackedScene" uid="uid://dqd47tpk7upab" path="res://NPCs/milk.tscn" id="14_l7d8m"]

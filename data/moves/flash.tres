@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c5dm6lmtg2vmq"]
+
+[ext_resource type="Script" uid="uid://cwcrt3yqe0a1e" path="res://data/moves/category.gd" id="1_6l3a7"]
+[ext_resource type="Resource" uid="uid://dvxuf8q8j347v" path="res://data/types/angel.tres" id="2_babjt"]
+
+[resource]
+script = ExtResource("1_6l3a7")
+type = ExtResource("2_babjt")
+base_power = 50
+accuracy = 100
+power_points = 10

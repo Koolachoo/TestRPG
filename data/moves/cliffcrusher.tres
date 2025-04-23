@@ -1,6 +1,11 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://clx7ioxpvktn1"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://clx7ioxpvktn1"]
 
 [ext_resource type="Script" uid="uid://cwcrt3yqe0a1e" path="res://data/moves/category.gd" id="1"]
+[ext_resource type="Resource" uid="uid://ecq1btm3jfii" path="res://data/types/wild.tres" id="2_mulw5"]
 
 [resource]
 script = ExtResource("1")
+type = ExtResource("2_mulw5")
+base_power = 40
+accuracy = 100
+power_points = 10

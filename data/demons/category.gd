@@ -3,6 +3,8 @@ extends Resource
 @export var front: Texture2D
 @export var back: Texture2D
 
+@export var cry: Resource
+
 @export var type1: Resource
 @export var type2: Resource
 

@@ -1,12 +1,14 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dv6d2fflhs3l5"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dv6d2fflhs3l5"]
 
 [ext_resource type="Script" uid="uid://c64r3wuwo0hvj" path="res://data/demons/category.gd" id="1_cov3v"]
 [ext_resource type="Texture2D" uid="uid://cmmqpwgdhspw" path="res://sprites/mons/angel.png" id="1_koobl"]
+[ext_resource type="AudioStream" uid="uid://d2aiq57526eh" path="res://audio/Cries/406.mp3" id="1_lsrht"]
 [ext_resource type="Resource" uid="uid://dvxuf8q8j347v" path="res://data/types/angel.tres" id="3_3n1n3"]
 
 [resource]
 script = ExtResource("1_cov3v")
 front = ExtResource("1_koobl")
+cry = ExtResource("1_lsrht")
 type1 = ExtResource("3_3n1n3")
 HP = 10
 MP = 10

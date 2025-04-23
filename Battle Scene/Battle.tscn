@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://c7ra24kvjydgb" path="res://Battle Scene/UI.gd" id="5_3xu4t"]
 [ext_resource type="Texture2D" uid="uid://bjjwwjof3dw2h" path="res://Textures/pavement_textures/pavement_02_rough_4k.png" id="5_17odw"]
 [ext_resource type="Script" uid="uid://cabcfotkmu7v2" path="res://Battle Scene/EnemyUI.gd" id="6_2bver"]
-[ext_resource type="AudioStream" uid="uid://b1pca4vgd4k8l" path="res://Music/27. Wild Digimon Battle.mp3" id="7_cspj7"]
+[ext_resource type="AudioStream" uid="uid://b1pca4vgd4k8l" path="res://audio/Music/27. Wild Digimon Battle.mp3" id="7_cspj7"]
 [ext_resource type="Texture2D" uid="uid://djwr6o3b175bl" path="res://Textures/autumn_field_puresky.jpg" id="8_t8xtf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_415p0"]

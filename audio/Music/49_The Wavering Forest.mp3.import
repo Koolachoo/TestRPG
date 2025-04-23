@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blrn8yipbu243"
+path="res://.godot/imported/49_The Wavering Forest.mp3-86ccf94dd5fb8a1fd578cc11df1c5fad.mp3str"
+
+[deps]
+
+source_file="res://audio/Music/49_The Wavering Forest.mp3"
+dest_files=["res://.godot/imported/49_The Wavering Forest.mp3-86ccf94dd5fb8a1fd578cc11df1c5fad.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
